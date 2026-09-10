@@ -1,0 +1,3423 @@
+[
+  {
+    "sourceIndex": 1,
+    "page": 1,
+    "text": "¿Cuál de las siguientes es una ventaja del encaminamiento dinámico?",
+    "options": [
+      "b. Es muy seguro porque se conoce las rutas por las cuales viajan los paquetes",
+      "a. El administrador debe configurar las rutas ante cambios en la topología de la red",
+      "e. Los administradores pueden configurar los routers de manera remota",
+      "d. Los routers actualizan sus tablas de encaminamiento ante la detección de un cambio de topología de la red",
+      "c. Los routers deben enviarse actualizaciones de encaminamiento, consumiendo ancho de banda de los enlaces"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 2,
+    "page": 1,
+    "text": "¿Qué dirección MAC de destino se colocará en un mensaje ARP-Request, si la MAC no la encuentra en la tabla ARP?",
+    "options": [
+      "MAC de la PC origen",
+      "11:11:11:11:11:11",
+      "FF:FF:FF:FF:FF:FF",
+      "AA:AA:AA:AA:AA:AA",
+      "01-00-5E:AB:CD:11",
+      "::1/128"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 3,
+    "page": 2,
+    "text": "En el método de control de congestión denominado paquete regulador salto por salto",
+    "options": [
+      "El router congestionado le indica al destino que existe congestión en la red",
+      "El router congestionado debe esperar hasta que el origen de la transmisión reduzca el tráfico de datos",
+      "Es proporcionar un alivio rápido en el punto de congestión, a expensas de usar más búferes en los router que lo anteceden",
+      "El router congestionado empieza a descartar paquetes",
+      "El router congestionado activa un bit en el paquete, para informar al destino de la existencia de la congestión"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 4,
+    "page": 2,
+    "text": "Qué significa \"Destino inaccesible\" en ICMP?",
+    "options": [
+      "Busca un router cercano",
+      "Ninguna de las opciones",
+      "Campo de encabezado inválido",
+      "El tiempo de vida llegó a cero",
+      "No se pudo entregar el paquete"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 5,
+    "page": 3,
+    "text": "Indique cuáles de las siguientes se pueden considerar capacidades mejoradas de IPv6 respecto de IPv4 (seleccione 4 opciones):",
+    "options": [
+      "Implementación más económica",
+      "Tamaño fijo de los datagramas (mensajes de usuario)",
+      "Soporte mejorado para las extensiones y opciones",
+      "Simplificación del formato de la cabecera (tamaño fijo)",
+      "Implementación de circuitos virtuales",
+      "Mayor fiabilidad en la transmisión de datagramas",
+      "Capacidades de direccionamiento extendida",
+      "Capacidad de autenticación y privacidad"
+    ],
+    "correctIndexes": [
+      2,
+      3,
+      6,
+      7
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 6,
+    "page": 3,
+    "text": "Cuando hay demasiados paquetes en una red (o en parte de ella), se incrementa el retardo y se degrada el rendimiento, estamos hablando de:",
+    "options": [
+      "Control de flujo",
+      "Metodos para controlar la congestion",
+      "Router lentos",
+      "Congestion"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 7,
+    "page": 4,
+    "text": "El protocolo OSPF maneja varios tipos de routers para implementar jerarquía entre áreas. El tipo de router troncal:",
+    "options": [
+      "Se conecta a través de enlaces troncales con otros sistemas autónomos",
+      "Interconecta los routers con otros sitemas autonomos diferentes",
+      "Encamina informacion de encaminamiento dentro de las diferentes areas",
+      "Encamina información entre switches diferentes",
+      "Encamina información entre routers pertenecientes al área cero"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 8,
+    "page": 4,
+    "text": "Cuáles de las siguientes afirmaciones describen el campo suma de verificación del protocolo IPv4 (seleccione dos):",
+    "options": [
+      "ermite saber si el origen debe retransmitir un paquete dañado",
+      "Se calcula en el origen, el destino y dos veces en cada router",
+      "Se utiliza para garantizar la integridad de todo el paquete IPv4",
+      "Permite detectar errores en la cabecera del paquete IPv4",
+      "Lo calculan sólo los routers para saber si encaminar o descartar el paquete"
+    ],
+    "correctIndexes": [
+      1,
+      3
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 9,
+    "page": 5,
+    "text": "Indique cuál es el tamaño mínimo de la cabecera de un paquete IPv4:",
+    "options": [
+      "18 bytes",
+      "25 bytes",
+      "30 bytes",
+      "40 bytes",
+      "15 bytes",
+      "60 bytes",
+      "20 bytes",
+      "6 bytes"
+    ],
+    "correctIndexes": [
+      6
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 10,
+    "page": 5,
+    "text": "El objetivo del algoritmo de encaminamiento jerárquico es:",
+    "options": [
+      "Controlar la cantidad de paquetes duplicados que hay en la red",
+      "Establecer una jerarquía entre los usuarios",
+      "Agrupar los usuarios en regiones o áreas, para reducir la cantidad de routers que hay en la red",
+      "Que se implemente preferentemente en redes pequeñas",
+      "Lograr reducir el tamaño de las tablas de encaminamiento de los routers"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 11,
+    "page": 6,
+    "text": "¿Qué técnicas de calidad de servicio en internet, se base en clases de tráfico?",
+    "options": [
+      "Servicios integrados",
+      "Servicios diferenciados",
+      "Se reservan recursos de extremo a extremo",
+      "FIFO",
+      "Ninguna de las opciones"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 12,
+    "page": 6,
+    "text": "Cuál de las siguientes características corresponden al protocolo RIP Versión 2, seleccione dos opciones:",
+    "options": [
+      "No soporta CIDR",
+      "Envia parte o toda su tabla de encaminamiento a la direccion 224.0.0.9",
+      "Envia actualizaciones de encaminamiento a la direccion 224.0.0.5",
+      "Envia actualizaciones de encaminamiento a la direccion 255.255.255.255",
+      "Permite que se implementen mascaras de subred de longitud variable",
+      "Es un protocolo classful"
+    ],
+    "correctIndexes": [
+      1,
+      4
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 13,
+    "page": 7,
+    "text": "El host \"A\" le está enviando información al host \"B\". Cuál será la función de un \"paquete regulador\" en el control de la congestión",
+    "options": [
+      "Indicar al host A que aumente el tamaño del buffer de salida",
+      "Indicar al host A que se reduzca la tasa de transmision de paquetes",
+      "Indicar al host B que aumente el tamaño del buffer de entrada",
+      "Indicar al host B la existencia de congestion en la red",
+      "Indicar al host B que se reduzca la tasa de transmision de paquetes"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 14,
+    "page": 7,
+    "text": "En el desprendimiento de carga (descarte de paquetes) durante el control de la congestión es preferible:",
+    "options": [
+      "Descartar un paquete viejo de una transmisión multimedia",
+      "Descartar un paquete viejo de una transmisión de archivos",
+      "Descartar un paquete viejo de una transmisión de páginas web",
+      "Descartar un paquete nuevo de una transmisión de video",
+      "Descartar un paquete viejo de una transmisión de correo electrónico"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 15,
+    "page": 8,
+    "text": "En la implementación de la tecnología MPLS",
+    "options": [
+      "Se incorpora un nuevo encabezado entre la capa de transporte y de red, conteniendo una nueva dirección IP",
+      "Los routers mantienen tablas y conmutan en función de la etiqueta contenida entre la capa de red y la de enlace de datos",
+      "Los routers encaminan en función de la dirección MAC destino de los paquetes",
+      "Los routers procesan cada paquete y lo encaminan en función de la dirección IP destino",
+      "Los routers agregan una etiqueta entre la capa de red y la capa de transporte"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 16,
+    "page": 8,
+    "text": "Cuál de las siguientes afirmaciones describe mejor el mensaje \"Destino inalcanzable\"",
+    "options": [
+      "Se envía cuando el TTL de un paquete llega a cero",
+      "Lo construye un host o router para indicar un puerto o protocolo no habilitado",
+      "Lo construye un host o un router en respuesta a un menaje echo-reply",
+      "Lo envía un router cuando el destino está a más de 30 saltos",
+      "Lo envía un host o router para verificar conectividad al nivel de red"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 17,
+    "page": 8,
+    "text": "¿Por qué no puede utilizarse :: dos veces en una dirección IPv6? *",
+    "options": [
+      "Porque IPv6 no admite ceros",
+      "Porque :: solo sirve para multicast",
+      "Porque no se podría determinar cuántos grupos cero representa cada ::",
+      "c) Porque IPv6 no admite ceros",
+      "Porque cambia el prefijo"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 18,
+    "page": 9,
+    "text": "La computadora A le está enviando datos a través de internet a la computadora B. Cuando el router advierte que uno de sus enlaces está congestionado, analiza los paquetes que están en la cola de salida. Luego construye un paquete a través del protocolo ICMP y se lo envía al origen de la transmisión (A) solicitando que reduzca la tasa de transmisión. Este método de control de congestión es:",
+    "options": [
+      "De ciclo abierto, denominado Detección Temprana Aleatoria",
+      "De ciclo cerrado, denominado Notificación explícita de congestión",
+      "De ciclo abierto, denominado Paquete Regulador",
+      "De ciclo cerrado, denominado Paquete Regulador",
+      "De ciclo abierto, denominado Notificación explícita de congestión",
+      "De ciclo cerrado, denominado Detección Temprana Aleatoria"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 19,
+    "page": 9,
+    "text": "Una empresa posee 5 redes LAN y un solo servidor DHCP en la LAN-1. Cuando una computadora de la LAN-3 se inicie, solicitará una dirección IP. El servidor DHCP sabrá que rango de dirección IP asignarle a partir de:",
+    "options": [
+      "La direccion IP de la interfaz del router conectada a la LAN-3",
+      "El servidor DHCP no puede saber que direccion IP asignarle",
+      "La direccion MAC de la computadora",
+      "La direccion IP del servidor DHCP",
+      "La direccion MAC de la interfaz del router conectada a la LAN-1",
+      "La direccion MAC del servidor DHCP"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 20,
+    "page": 10,
+    "text": "¿Cuál de estas direcciones IPv6 está correctamente escrita? *",
+    "options": [
+      "2001:db8:1234:5678:90ab:cdef:0000:0001",
+      "2001:db8:1234:5678:90ab:cdef0001",
+      "2001:db8:1234:5678:90ab:cdef:0000:1",
+      "2001-db8-1234-5678-90ab-cdef-0-1"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 21,
+    "page": 10,
+    "text": "Cuando controlamos la cantidad de paquetes que ingresan a TODA la red, hablamos de",
+    "options": [
+      "a. Control de flujo",
+      "b. Métodos de ciclo abierto",
+      "c. Control de congestión",
+      "d. Métodos de ciclo cerrado"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 22,
+    "page": 10,
+    "text": "Cada vez que una PC debe enviar una trama a un destino perteneciente a su misma red ejecuta un ARP-request:",
+    "options": [
+      "Siempre",
+      "Solo si no lo encuentra en su tabla ARP",
+      "Nunca",
+      "Depende del protocolo de encaminamiento configurado",
+      "Depende del protocolo DHCP"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 23,
+    "page": 11,
+    "text": "¿Qué protocolo de enrutamiento permite dividir al sistema autónomo en áreas?",
+    "options": [
+      "BGP",
+      "OSPF",
+      "IS-IS",
+      "RiPv2",
+      "Ninguna de las opciones",
+      "RIP"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 24,
+    "page": 11,
+    "text": "A un administrador de red le propusieron que configurara sumarización de rutas en el router. ¿Qué beneficios tiene?",
+    "options": [
+      "Se configuran automáticamente en el router",
+      "Reduce el tamaño de las tablas de encaminamiento",
+      "No necesita crear rutas estáticas",
+      "Tiene más opciones el router de elegir rutas"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 25,
+    "page": 12,
+    "text": "Cuándo se implementa el desprendimiento de carga (descarte de paquetes), si en la cola de la interfaz del router hay paquetes de una transmisión de archivos, conviene descartar el paquete que posee:",
+    "options": [
+      "Menor numero de secuencia",
+      "Menor numero de saltos",
+      "Mayor numero de secuencia",
+      "Menor numero de checksum",
+      "Menor valor de TTL",
+      "Mayor numero de puerto"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 26,
+    "page": 12,
+    "text": "¿Sobre qué puertos trabaja el protocolo BOOTP?",
+    "options": [
+      "69 y 70",
+      "67 y 68",
+      "Ninguna de las opciones",
+      "65 Y 66"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 27,
+    "page": 12,
+    "text": "Cual de las siguientes afirmaciones corresponden al algoritmo de vector distancia (2 opciones)",
+    "options": [
+      "Se usa para redes muy grandes",
+      "No son escalables por lo que no se implementan en redes grandes",
+      "Convergen lentamente",
+      "Convergen rapidamente"
+    ],
+    "correctIndexes": [
+      1,
+      2
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 28,
+    "page": 13,
+    "text": "¿Cómo se denominan a los puertos del switch (soporta vlan) que están conectados los dispositivos finales?",
+    "options": [
+      "Subinterfaces",
+      "Acceso",
+      "Troncal",
+      "Ninguna de las opciones",
+      "Interfaces"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 29,
+    "page": 13,
+    "text": "El mensaje utilizado en Dynamic Host Configuration Protocol que tiene por objetivo informar al servidor que ya no necesita utilizar la dirección IP asignada es:",
+    "options": [
+      "Decline",
+      "Reply",
+      "Request (solicitar parámetros de configuración)",
+      "Discover",
+      "Offer",
+      "Release"
+    ],
+    "correctIndexes": [
+      5
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 30,
+    "page": 13,
+    "text": "Que tipo de mensaje es un ARP-Request",
+    "options": [
+      "b. Anycast",
+      "d. Multicast",
+      "c. Broadcast",
+      "a. Unicast"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 31,
+    "page": 14,
+    "text": "Indique cuáles de los siguientes son tipos de direcciones IPv6",
+    "options": [
+      "Dual stack",
+      "APIPA",
+      "Loopback",
+      "Anycast",
+      "Broadcast",
+      "De enlace local",
+      "Unicast",
+      "Multiprotocolo",
+      "Securecast",
+      "Multicast"
+    ],
+    "correctIndexes": [
+      2,
+      3,
+      5,
+      6,
+      9
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 32,
+    "page": 14,
+    "text": "¿Cuántos bits tiene el id subred en una dirección IPv6?",
+    "options": [
+      "45",
+      "16",
+      "Ninguna de las opciones",
+      "64",
+      "48"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 33,
+    "page": 15,
+    "text": "Si el tamaño de una trama inalámbrica es de 1554 bytes, determine la carga útil (datos) en el paquete IPv6:",
+    "options": [
+      "Es una trama inválida",
+      "1534 bytes",
+      "1400 bytes",
+      "1500 bytes",
+      "1480 bytes",
+      "1520 bytes"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 34,
+    "page": 15,
+    "text": "En cuál de los siguientes se implementa el algoritmo de estado de enlace",
+    "options": [
+      "Protocolo RIPv2",
+      "Protocolo OSPF",
+      "Protocolo EGP",
+      "Algoritmo de vector distancia",
+      "Algoritmo de Fulkerson Bellman Ford",
+      "Protocolo BGP",
+      "Protocolo RIPv1"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 35,
+    "page": 16,
+    "text": "El mensaje DHCP a través del cual el cliente informa al servidor DHCP que la dirección IP ofrecida ya está en uso es:",
+    "options": [
+      "DHCP - offer",
+      "DCHP - Nack",
+      "DHCP - inform",
+      "DHCP - decline",
+      "DHCP - request",
+      "DHCP - duplicate"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 36,
+    "page": 16,
+    "text": "Cuál de las siguientes afirmaciones es correcta con respecto al enrutamiento entre VLANs:",
+    "options": [
+      "Los switches permiten comunicar PC pertenecientes a VLANs diferentes",
+      "El router acepta el trafico etiquetado VLAN A, lo encamina a la interfaz correspondiente y le agrega la etiqueta de la VLAN B",
+      "No se permite la comunicacion entre PC de diferentes VLANs",
+      "El switch acepta trafico etiquetado de la VLAN A, lo conmuta a la interfaz correspondiente y le agrega la etiqueta de la VLAN B"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 37,
+    "page": 17,
+    "text": "Un router de una empresa de telecomunicaciones es multiprotocolo y tiene configurado dos protocolos de encaminamiento IGP. Si dicho router aprende cómo llegar a una misma red con ambos protocolos, ¿qué ruta instalará en su tabla de encaminamiento?",
+    "options": [
+      "La ruta que posea el menor número de saltos",
+      "La ruta del protocolo que posea la menor métrica",
+      "La ruta que posea el mayor ancho de banda",
+      "La ruta que atraviese la menor cantidad de sistemas autónomos",
+      "La ruta del protocolo que posea la menor distancia administrativa"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 38,
+    "page": 17,
+    "text": "¿Cuál es la función principal de DHCPv4? *",
+    "options": [
+      "Enrutar paquetes entre redes",
+      "Traducir direcciones privadas",
+      "Resolver nombres de dominio",
+      "Asignar dinámicamente parámetros de configuración IP a los hosts"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 39,
+    "page": 17,
+    "text": "¿En qué capa del modelo TCP/IP trabaja ICMP?",
+    "options": [
+      "Acceso a la red",
+      "Aplicación",
+      "Interred",
+      "Transporte",
+      "Ninguna de las opciones"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 40,
+    "page": 18,
+    "text": "¿Cuál de los siguientes es un tipo de red que NO se maneja en el protocolo BGP?",
+    "options": [
+      "b. Red de tránsito",
+      "e. Red de multidifusión",
+      "a. Red multihomed (multihospedada)",
+      "d. Red de conexión única o stub",
+      "c. Red de broadcast"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 41,
+    "page": 18,
+    "text": "Una computadora tiene asignada una IP dinámicamente.El administrador la traslada a otra red de la empresa. Para que dicha computadora tenga conectividad, será necesario:",
+    "options": [
+      "Modificar su dirección IP",
+      "Modificar su dirección MAC",
+      "Mantener su dirección IP y modificar su dirección MAC",
+      "Modificar su dirección IP y su dirección MAC",
+      "No hacer nada, ya tiene conectividad"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 42,
+    "page": 18,
+    "text": "OSPF maneja varios tipos de routers para implementar jerarquía. El tipo de router ABR permite:",
+    "options": [
+      "Encaminar dentro del área troncal",
+      "Calcular la métrica de costo entre todos los routers dentro de un área.",
+      "Intercambiar información de encaminamiento con routers pertenecientes a otros sistemas autónomos",
+      "Interconectar el área troncal (área 0) con otras áreas diferentes"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 43,
+    "page": 19,
+    "text": "¿Qué capas del modelo OSI trabajan conjuntamente para implementar * técnicas de calidad de servicio?",
+    "options": [
+      "Red y Transporte",
+      "Enlace de datos y Fisica",
+      "Ninguna de las opciones",
+      "Transporte y Enlace e datos",
+      "Red y Enlace de datos"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 44,
+    "page": 19,
+    "text": "La cabecera del protocolo IPV6",
+    "options": [
+      "Permite la fragmentación de paquetes",
+      "Permite un procesamiento más rápido en los routers que el IPV4",
+      "Posee menos bytes que la cabecera IPV4",
+      "Tiene un tamaño máximo",
+      "Contiene más campos que el protocolo IPV4"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 45,
+    "page": 20,
+    "text": "¿Cuáles de los siguientes se utiliza para detectar una congestión en los métodos de control de congestión de ciclo cerrado (seleccione DOS opciones)?",
+    "options": [
+      "d. Bucle o loops de encaminamiento",
+      "e. Capacidad de procesamiento de los hosts receptores",
+      "f. Cantidad de routers que tienen que atravesar los paquetes",
+      "a. Capacidad del disco rígido de los servidores",
+      "c. Longitud promedio de la cola de paquetes en los routers",
+      "b. Cantidad de paquetes descartados por los routers"
+    ],
+    "correctIndexes": [
+      4,
+      5
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 46,
+    "page": 20,
+    "text": "La dirección IP destino en un paquete enviado desde una PC que está arrancando, hacia un servidor Dynamic Host Configuration Protocol es",
+    "options": [
+      "0.0.0.0",
+      "FF-FF-FF-FF-FF-FF",
+      "dirección IP del servidor DHCP",
+      "255.255.255.255",
+      "1111-1111-1111-1111"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 47,
+    "page": 21,
+    "text": "¿Qué tipos de router se utilizan para interconectar áreas diferentes en OSPF?",
+    "options": [
+      "ABR",
+      "Ninguna de las opciones",
+      "Router internos",
+      "Router troncales",
+      "ASBR"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 48,
+    "page": 21,
+    "text": "Indique cuáles de las siguientes características corresponden al protocolo BGP (seleccione 2 opciones):",
+    "options": [
+      "Los pares BGP establecen sesiones UDP para enviar anuncios de rutas",
+      "Posibilidad de existencia de bucles",
+      "Permite interconectar áreas diferentes dentro de un sistema autónomo",
+      "Soporta sumarización de rutas y CIDR",
+      "Implementa el algoritmo de vector distancia basado en políticas",
+      "Intercambia información de encaminamiento entre sistemas autónomos diferentes"
+    ],
+    "correctIndexes": [
+      3,
+      5
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 49,
+    "page": 22,
+    "text": "¿Cuál es objetivo de la distancia administrativa en los protocolos de enrutamiento?",
+    "options": [
+      "Retardo del enlace",
+      "Ancho de banda del enlace",
+      "Ninguna de las opciones",
+      "Costo del enlace",
+      "Confiabilidad de la ruta"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 50,
+    "page": 22,
+    "text": "Indique cuál de las siguientes afirmaciones describe mejor el objetivo del control de flujo:",
+    "options": [
+      "Controlar la cantidad de paquetes que fluyen por la red",
+      "Controlar el flujo de datos entre los routers de la red",
+      "Garantizar que los routers no retengan demasiado tiempo los flujos de datos",
+      "Activar el bit de advertencia cuando se detecta congestion en la red",
+      "Asegurar que un emisor rapido no sature a un receptor lento"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 51,
+    "page": 22,
+    "text": "Un principio general de congestión es, métodos de ciclo cerrado. Identifique dos características en las siguientes opciones: (2 opciones):",
+    "options": [
+      "c. Toman medidas correctivas",
+      "b. Deciden cuándo aceptar tráfico nuevo",
+      "a. Informan sobre la congestión a quienes puedan solucionar el problema",
+      "d. Deciden cuándo y cuáles paquetes descartar"
+    ],
+    "correctIndexes": [
+      0,
+      2
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 52,
+    "page": 23,
+    "text": "A partir de la siguiente topología, indique cuál de los siguientes comandos se deberá configurar en el router R6 para definir su correspondiente par BGP interno:",
+    "options": [
+      "neighbor 170.1.2.1 remote-as 600",
+      "neighbor 170.1.2.2 remote-as 600",
+      "neighbor 170.1.2.1 remote-as 500",
+      "neighbor 172.9.6.1 remote-as 600"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 53,
+    "page": 23,
+    "text": "El control de flujo es cuando existe mayor cantidad de paquetes que la capacidad de una red para procesarlos",
+    "options": [
+      "Falso",
+      "Verdadero"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 54,
+    "page": 24,
+    "text": "¿Cuál de las siguientes características corresponde al protocolo RARP?",
+    "options": [
+      "a. Permite que un único servidor RARP asigne direcciones IP a todas las LANs de la empresa",
+      "b. Facilita cambios y traslados de computadoras entre LANs de una misma empresa",
+      "c. Permite que una computadora cuando arranca, envíe su dirección MAC y obtenga una dirección IPv4 desde un servidor",
+      "d. Permite averiguar la dirección MAC de una computadora a partir de una dirección IPv4 conocida"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 55,
+    "page": 24,
+    "text": "En el método de autoconfiguración sin estado en IPv6, los hosts reciben información de red a través de mensajes Router Advertisement (RA) enviados por los routers. ¿Cuál de las siguientes afirmaciones es correcta?",
+    "options": [
+      "Los RA solamente informan el tiempo de validez de la dirección, sin proveer más información.",
+      "Los RA entregan una dirección IPv6 completa (incluyendo la parte de host) a cada dispositivo.",
+      "Los RA se envían periódicamente (aprox. cada 300 segundos) e incluyen el prefijo de red, router por defecto y parámetros como MTU y límite de saltos.",
+      "Los hosts no pueden solicitar un RA antes de los 300 segundos, deben esperar el próximo anuncio periódico."
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 56,
+    "page": 25,
+    "text": "En qué dispositivos se reservan los recursos (ancho de banda, espacio en búfer y ciclos de CPU), cuando implementamos programación de paquetes?",
+    "options": [
+      "En el host receptor",
+      "Switch",
+      "Ninguna de las opciones",
+      "Router",
+      "En el host emisor"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 57,
+    "page": 25,
+    "text": "Cuando un router advierte congestión, empieza a utilizar paquetes reguladores. Luego toma acciones como: (2 opciones)",
+    "options": [
+      "Decide una detección temprana aleatoria",
+      "Maneja un desprendimiento de carga",
+      "El router envía un paquete regulador al host origen informando de la congestión y del host destino implicado",
+      "solicita reducir el tráfico al destino especificado en un determinado porcentaje"
+    ],
+    "correctIndexes": [
+      2,
+      3
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 58,
+    "page": 25,
+    "text": "¿Que debe realizar el administrador de red, en el servidor BOOTP, al trasladar un puesto de trabajo a otra red dentro de la empresa?",
+    "options": [
+      "Actualizar la dirección IP y modificar la dirección MAC",
+      "Actualizar la dirección IP y mantener la dirección MAC",
+      "Solo actualizar la dirección MAC",
+      "Mantener la dirección IP y modificar la dirección MAC",
+      "No hacer nada, la PC ya tiene conectividad"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 59,
+    "page": 26,
+    "text": "Marcos Pomenich está aprendiendo a utilizar Wireshark, realiza una captura de paquetes IPV6 y encuentra que uno de ellos va dirigido a la dirección FF02::2. Indique cuál de las siguientes afirmaciones es correcta:",
+    "options": [
+      "Es una dirección de enlace local",
+      "El paquete está destinado a un dispositivo ubicado en el mismo segmento de red",
+      "El paquete será procesado por un grupo de dispositivos",
+      "El paquete es un broadcast dentro del segmento de red",
+      "Es una dirección inválida"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 60,
+    "page": 26,
+    "text": "Cuáles de las siguientes características corresponden al protocolo OSPF, seleccione dos opciones:",
+    "options": [
+      "Es un protocolo classful",
+      "Mantiene la adyacencia con sus routers vecinos a través de paquetes HELLO",
+      "Es capaz de construir un grafo de toda la red, para luego ejecutar el algoritmo de Dijkstra",
+      "Cada router posee una base de datos topológicа diferente",
+      "Converge muy lentamente",
+      "Todos los routers de la topología poseen las mismas tablas de encaminamiento"
+    ],
+    "correctIndexes": [
+      1,
+      2
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 61,
+    "page": 27,
+    "text": "En el método de control de congestión denominado paquete regulador que afecta al origen:",
+    "options": [
+      "El router congestionado debe esperar para aliviar la congestión hasta que el origen de la transmisión reduzca el tráfico de datos",
+      "El router congestionado activa un bit en el paquete, para informar al destino de la existencia de la congestión",
+      "El router congestionado le indica al destino que existe congestión en la red",
+      "El router congestionado se alivia rápidamente, ya que los otros routers absorben la congestión"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 62,
+    "page": 27,
+    "text": "En la planificación FQ (fair queueing, encolamiento justo) como método para brindar Calidad de Servicio:",
+    "options": [
+      "d. Cuando se encaminaron todos los paquetes de máxima prioridad, se continúa luego con los de siguiente prioridad y así sucesivamente",
+      "c. Los paquetes se clasifican en varias colas y se encaminan por ej., 5 paquetes de la cola1, luego 3 paquetes de la cola2, luego 1 paquete de la cola3, luego se vuelve a la cola1, etc.",
+      "b. Los paquetes se atienden en estricto orden de llegada",
+      "a. Los paquetes son clasificados en varias colas y se va procesando un paquete de cada una de las colas"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 63,
+    "page": 28,
+    "text": "Indique cuál de las siguientes afirmaciones son correctas con respecto al tipo de mensaje “echo request” (seleccione dos opciones):",
+    "options": [
+      "Se utiliza en los comandos ipconfig e ifconfig",
+      "Lo utilizan los comandos ping y tracert",
+      "Lo genera el router cuando el TTL llega a cero",
+      "Es un mensaje broadcast",
+      "Se encapsula en un segmento TCP",
+      "Se encapsula en un paquete IPv4"
+    ],
+    "correctIndexes": [
+      1,
+      5
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 64,
+    "page": 28,
+    "text": "¿Qué dispositivo se conecta en el puerto AUX de un Router?",
+    "options": [
+      "Ninguna de las opciones.",
+      "Un puesto de trabajo.",
+      "Módem.",
+      "Switch.",
+      "Otro router"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 65,
+    "page": 28,
+    "text": "¿Dónde podemos encontrar un Router ISR? (Elija 2)",
+    "options": [
+      "En los grandes proveedores de servicios",
+      "En los troncales de los ISP",
+      "En sucursales",
+      "En el hogar",
+      "En las WAN"
+    ],
+    "correctIndexes": [
+      2,
+      3
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 66,
+    "page": 29,
+    "text": "Una empresa de telecomunicaciones posee una gran cantidad de routers y tiene implementado el protocolo OSPF. Si un dispositivo perteneciente a una red del área 1 quiere comunicarse con un Servidor Web del área 4, indique cuál de las siguientes afirmaciones es correcta",
+    "options": [
+      "c. El paquete atravesará primero el área 1 y luego se comunicará directamente con el área 4",
+      "b. El paquete atravesará primero el área 1, luego el área 0 y por último el área 4",
+      "a. Se deberá ejecutar el protocolo BGP para esta comunicación",
+      "d. No se pueden comunicar porque pertenecen a sistemas autónomos diferentes",
+      "e. Los dispositivos no se pueden comunicar porque pertenecen a áreas diferentes"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 67,
+    "page": 29,
+    "text": "¿Que ventaja me brindar tener un servidor DHCP con agente relay?",
+    "options": [
+      "Me dice a que LAN pertenece un puesto de trabajo cuando el administrador consulta el servidor",
+      "Tener un solo servidor en la empresa para varias LAN",
+      "Solo puedo tener un servidor por LAN y mayor control",
+      "Se cae un servidor y automaticamente se levanta el de respaldo"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 68,
+    "page": 30,
+    "text": "Una empresa tiene varios router. Pasado un tiempo, uno de ellos detecta que una de sus interfaces sobre pasa el umbral de la cola y comienza a descartar paquetes al azar ¿Como se denomina el método de control de congestión?",
+    "options": [
+      "Notificación explicita de congestión",
+      "Paquete regulador",
+      "Algoritmo de cubeta con ficha",
+      "Detección temprana aleatoria",
+      "Detección tardia al azar"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 69,
+    "page": 30,
+    "text": "Indique cuáles de las siguientes son características del encaminamiento estático (selecciones DOS)",
+    "options": [
+      "Las rutas son configuradas por el administrador de la red",
+      "Requiere el intercambio de información de encaminamiento entre routers",
+      "Se adapta a los cambios de tráfico en la red",
+      "Los routers deben intercambiar regularmente actualizaciones de encaminamiento",
+      "Las decisiones de encaminamiento se toman independientemente del estado de la red",
+      "Se adapta automáticamente a los cambios de topología de red"
+    ],
+    "correctIndexes": [
+      0,
+      4
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 70,
+    "page": 31,
+    "text": "El comando traceroute o tracert se implementa a traves de",
+    "options": [
+      "Segmentos TCP haciendo variar el campo numero de secuencia de la trama",
+      "Mensajes ICMP redirect haciendo variar el TTL del paquete IPv4",
+      "Paquetes DHCP haciendo variar el rango de las direcciones IP",
+      "Mensajes ICMP haciendo variar el campo TTL del paquete IPv4",
+      "Mensajes ARP request y ARP reply"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 71,
+    "page": 31,
+    "text": "Un administrador está analizando tráfico con el software Wireshark. ¿Qué dirección IP de destino tiene en una solicitud ARP-Request?",
+    "options": [
+      "La ip de destino del router de la máquina de destino",
+      "Ninguna de las opciones",
+      "La ip de la interfaz LAN de la máquina origen",
+      "La IP de la máquina destino"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 72,
+    "page": 31,
+    "text": "¿Para qué se utiliza el control de congestión?",
+    "options": [
+      "Ninguna de las opciones",
+      "Es para que la LAN del emisor no se congestione",
+      "Se utiliza para que dos dispositivos de encaminamiento no descarten paquetes",
+      "Se ocupa de asegurar que la red sea capaz de transportar el tráfico ofrecido",
+      "Se relaciona con el tráfico entre un emisor y un receptor en particular"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 73,
+    "page": 32,
+    "text": "El protocolo OSPF maneja varios tipos de routers para implementar jerarquía entre áreas. El tipo de router ASBR permite:",
+    "options": [
+      "Encaminar información de encaminamiento dentro de una misma área",
+      "Encaminar informacion solo en el area troncal",
+      "Interconectar los routers con otros sistemas autonomos diferentes",
+      "Interconectar el area troncal (area 0) con otra area diferente",
+      "Encaminar informacion entre switches diferentes"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 74,
+    "page": 32,
+    "text": "¿Qué prefijo identifica las direcciones IPv6 multicast? *",
+    "options": [
+      "::1/128",
+      "fe80::/10",
+      "2000::/3",
+      "ff00::/8"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 75,
+    "page": 32,
+    "text": "Las tablas ARP:",
+    "options": [
+      "Poseen solo entradas estáticas",
+      "Pueden tener entradas dinámicas y estáticas",
+      "Tienen solo entradas dinámicas",
+      "Necesitan configuración de las entradas dinámicas"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 76,
+    "page": 33,
+    "text": "Un router aprende cómo llegar a una red a través de dos rutas diferentes mediante el protocolo OSPF. Indique cuál de las afirmaciones es correcta:",
+    "options": [
+      "El router seleccionara la ruta que atraviese un menor numero de sistemas autonomos",
+      "El router elegira la ruta que posea la menor metrica",
+      "El router instalara en la tabla de encaminamiento la que tenga menor distancia administrativa",
+      "El router instalara en la tabla de encaminamiento la ruta que posea un menor ancho de banda",
+      "El router elegira la ruta que tenga menor numero de saltos"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 77,
+    "page": 33,
+    "text": "¿Cómo se denomina a la técnica cuando se utiliza el algoritmo de * enrutamiento en que el router toma decisiones con base en el conocimiento local y no en la imagen completa de la red?",
+    "options": [
+      "Vector distancia",
+      "Por inundación",
+      "La ruta mas corta",
+      "Jerárquico",
+      "Ninguna de las opciones"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 78,
+    "page": 34,
+    "text": "Indique el tráfico cuyas direcciones IPv6 de destino no será reenviado por el router fuera de su enlace local:",
+    "options": [
+      "2001:0410:0110:0002:0200:CBCF:1234:fe80",
+      "2001:0410:0110:0002:0200:CBCF:1234:4402",
+      "fe90::1:2:3:4",
+      "2001:a:b:c::1",
+      "fe80::1",
+      "2001:0410::fe80",
+      "fe80::abcd:e:f:1234"
+    ],
+    "correctIndexes": [
+      2,
+      4,
+      6
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 79,
+    "page": 34,
+    "text": "¿Qué tipo de protocolo de enrutamiento carga primero un router al arrancar?",
+    "options": [
+      "Dinámico",
+      "Estado de enlace",
+      "Ninguna de las opciones",
+      "Depende del fabricante del dispositivo",
+      "Estático"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 80,
+    "page": 35,
+    "text": "Manu Cavina está descargando en su computadora, un archivo muy grande desde un Servidor Web. Cuál de los siguientes métodos permite garantizar que el servidor no sature de información a la computadora de Manu, suponiendo que la PC no posee suficiente espacio en su búfer",
+    "options": [
+      "Calidad de Servicio",
+      "Control de congestión",
+      "Detección Temprana Aleatoria (RED)",
+      "Control de flujo",
+      "Algoritmo de Dijkstra"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 81,
+    "page": 35,
+    "text": "Un mensaje ARP-reply se encapsula en",
+    "options": [
+      "Un paquete con dirección destino unicast",
+      "Un paquete con dirección destino 255.255.255.255",
+      "Una trama con dirección destino unicast",
+      "Una trama con dirección destino multicast",
+      "Una trama con dirección destino FF:FF:FF:FF:FF:FF (en request)"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 82,
+    "page": 36,
+    "text": "Si en un router se configuran los siguientes comandos, indique cuál de las siguientes afirmaciones es correcta: network 172.30.0.0 0.0.255.255 área 2 network 205.17.33.0 0.0.0.255 área 0",
+    "options": [
+      "Se configuro el protocolo BGP",
+      "Se configuro el protocolo RIP",
+      "Se configuro un router interno de OSPF",
+      "Se configuro un router ASBR de OSPF",
+      "Se configuro un router ABR de OSPF",
+      "Se configuro un protocolo de vector distancia"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 83,
+    "page": 36,
+    "text": "¿A través de qué campo de la cabecera IPv6 maneja las opciones?",
+    "options": [
+      "Siguiente cabecera",
+      "IPV6 no admite opciones",
+      "Opciones",
+      "Identificación",
+      "Checksum",
+      "Protocolo",
+      "Etiqueta de flujo"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 84,
+    "page": 37,
+    "text": "La PC-A perteneciente a la LAN-A envía un paquete a la PC-B ubicada en LAN-B, qué dirección MAC de destino colocará la PC-A en la trama:",
+    "options": [
+      "La direccion IP del router de la LAN-A",
+      "La direccion IP del router de la LAN-B",
+      "La direccion MAC del router del la LAN-A",
+      "La direccion MAC de la PC-A",
+      "La direccion MAC de la PC-B",
+      "La direccion MAC del router de la LAN-B"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 85,
+    "page": 37,
+    "text": "El comando ping que se ejecuta desde Windows consiste en enviar:",
+    "options": [
+      "4 mensajes ICMP time-exceeded al origen de una transmisión",
+      "4 segmentos TCP echo-request y echo-reply",
+      "3 mensajes ICMP echo-request y echo-reply",
+      "3 mensajes UDP echo-request y echo-reply",
+      "4 mensajes ICMP echo-request y echo-reply"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": true,
+    "responseCorrectText": [
+      "mensajes ICMP echo-request y echo-reply"
+    ]
+  },
+  {
+    "sourceIndex": 86,
+    "page": 38,
+    "text": "Cuáles de las siguientes características corresponden a los servicios integrados como método para brindar calidad de servicio",
+    "options": [
+      "Requiere el protocolo de reserva RSVP",
+      "Se utilizan los campos TOS y clase de tráfico del protocolo IP",
+      "Se marcan los paquetes cerca del origen según la clase a la que pertenecen",
+      "Los flujos de paquetes de una comunicación siguen el mismo camino físico",
+      "Es escalable en redes grandes como Internet"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 87,
+    "page": 38,
+    "text": "¿Cuál de los protocolos de enrutamiento converge más rápido?",
+    "options": [
+      "Enrutamiento estático",
+      "Ninguna de las opciones",
+      "Estado de enlace",
+      "Vector distancia"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 88,
+    "page": 39,
+    "text": "Teniendo en cuenta la siguiente topología, determine qué comandos se deben configurar en el router 1 para que se aún logre la convergencia a través del protocolo RIP (seleccione 3 opciones):",
+    "options": [
+      "f. Network 19.0.0.0 0.255.255.255",
+      "d. Network 19.0.0.0",
+      "e. Router rip",
+      "b. Network 12.0.0.0",
+      "a. Router rip 10",
+      "c. Network 12.0.0.0 0.255.255.255"
+    ],
+    "correctIndexes": [
+      1,
+      2,
+      3
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 89,
+    "page": 40,
+    "text": "Cuando los routers de una red intercambian información en forma colaborativa para el armado y construcción de sus tablas de encaminamiento, se dice que se trata de:",
+    "options": [
+      "Encaminamiento estatico centralizado",
+      "Encaminamiento estatico",
+      "Encaminamiento aislado",
+      "Encaminamiento dinamico distribuido",
+      "Encaminamiento dinamico centralizado"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 90,
+    "page": 40,
+    "text": "Cuál de los siguientes parámetros de Calidad de Servicio es importante en la transmisión de un correo electrónico:",
+    "options": [
+      "Ancho de banda",
+      "Variabilidad del retardo",
+      "Retardo",
+      "Métrica",
+      "Pérdida o Confiabilidad",
+      "Confidencialidad"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 91,
+    "page": 41,
+    "text": "El administrador de una red implementó el protocolo RIP. Si se configuró el “horizonte dividido” y teniendo en cuenta la siguiente topología, determine cuál de las siguientes afirmaciones es correcta:",
+    "options": [
+      "El router RB enviara al router RA informacion sobre redes 16.0.0.0 y 24.0.0.0",
+      "El router RB envia al router RA informacion sobre redes 14.0.0.0 y 20.0.0.0",
+      "El router RA enviara al router RB informacion sobre redes 16.0.0.0 y 24.0.0.0",
+      "El router RB enviara al router RA informacion sobre redes 14.0.0.0, 16.0.0.0, 20.0.0.0 y 24.0.0.0",
+      "El router RA enviara al router RB informacion sobre redes 14.0.0.0, 16.0.0.0, 20.0.0.0 y 24.0.0.0"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 92,
+    "page": 42,
+    "text": "Dada la siguiente topología y las tablas de enrutamiento. ¿A qué routers pertenecen dichas tablas?",
+    "options": [
+      "a) Router 2 , b) Router 3",
+      "a) Router 1 , b) Router 2",
+      "a) Router 1 , b) Router 3"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 93,
+    "page": 43,
+    "text": "¿Para qué dispositivo va dirigido el mensaje “Fuente disminuida”?",
+    "options": [
+      "Ninguna de las opciones",
+      "Para el router de la LAN del destino",
+      "Para el router de la LAN del origen",
+      "Para los router que intervienen en la comunicación",
+      "Para el origen",
+      "Para el destino"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 94,
+    "page": 43,
+    "text": "¿Qué sucede al eliminar ceros a la izquierda de un grupo IPv6? *",
+    "options": [
+      "Convierte el grupo en decimal",
+      "No cambia el valor del grupo",
+      "Cambia el valor",
+      "Lo convierte en multicast"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 95,
+    "page": 43,
+    "text": "¿A qué denominamos sistema autónomo?",
+    "options": [
+      "Al conjunto de Router que pertenecen a la misma red",
+      "Al conjunto de Router bajo la misma administración",
+      "Al conjunto de Router que tienen el mismo protocolo de enrutamiento",
+      "Al conjunto de Router que se encuentran cerca de los dispositivos finales"
+    ],
+    "correctIndexes": [
+      1,
+      2
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 96,
+    "page": 44,
+    "text": "Cuales de las siguientes afirmaciones son correctas con respecto a la cabecera del protocolo IPV6 (seleccione tres opciones):",
+    "options": [
+      "Elimina los campos relacionados a la fragmentación de paquetes",
+      "La longitud de la cabecera es fija",
+      "El campo versión en binario es \"0101\"",
+      "Se calcula el checksum de la cabecera en cada salto, en el origen y en el destino",
+      "El campo TTL garantiza que no se produzcan bucles de encaminamiento",
+      "Posee menos campos que la cabecera del protocolo IPv4"
+    ],
+    "correctIndexes": [
+      0,
+      1,
+      5
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 97,
+    "page": 45,
+    "text": "Una PC perteneciente a la red 24.0.0.0 envía información a otra PC ubicada en la red 20.0.0.0. A partir de la siguiente topología y tablas de encaminamiento, sabiendo que se está implementando el protocolo RIP, determine cuál de las afirmaciones es correcta:",
+    "options": [
+      "d. La información llegará rápidamente ya que los routers los inundarán por todas sus interfaces",
+      "e. Los routers no saben cómo llegar a la red 20.0.0.0",
+      "a. Los paquetes no llegarán al destino, ya que existe un bucle o loop entre los routers RA y RB",
+      "c. Existe un loop routers RB y RC, por lo cual los paquetes no pueden ser entregados al destinatario",
+      "b. Los paquetes llegarán correctamente ya que la red es convergente"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 98,
+    "page": 46,
+    "text": "Juan administra la red de la empresa y tiene problemas con un equipo que pertenece a la VLAN 20, no logra conectarse con las demás VLANs. Según Juan el problema está en el switch que tiene la configuración de la siguiente imagen, ¿Qué problema tiene?",
+    "options": [
+      "El problema es que el PVID del puerto eth2 está mal configurado.3",
+      "El problema es que no se configuró ningún puerto como trunk en el switch.",
+      "El problema es que la VLAN 20 no tiene ningún puerto configurado como untagged, por lo tanto la PC no pertenece realmente a esa VLAN y no puede comunicarse."
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 99,
+    "page": 46,
+    "text": "¿Quién es el encargado de agregar la etiqueta en el protocolo MPLS? *",
+    "options": [
+      "Router LSR",
+      "Servidor DNS",
+      "Router LER",
+      "Switch"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 100,
+    "page": 47,
+    "text": "La siguiente dirección 2001:db8:3c4d:15::/64 es: *",
+    "options": [
+      "Registro",
+      "Prefijo de ISP",
+      "Prefijo de subred",
+      "Prefijo de sitio"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 101,
+    "page": 47,
+    "text": "Indique cuál de las siguientes afirmaciones hace referencia al algoritmo de inundación controlada:",
+    "options": [
+      "ingresó, si el número de versión del paquete es mayor al último que posee registrado de ese router",
+      "Converge lentamente",
+      "Cada router envía su tabla de encaminamiento periódicamente a sus routers vecinos",
+      "Sólo envía el paquete por las líneas de salida, si el número de versión es menor o igual al último que posee registrado el router",
+      "Cada paquete que llega, se envía siempre por todas",
+      "Se implementa para interconectar sistemas autónomos distintos"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 102,
+    "page": 48,
+    "text": "Un router aprende cómo llegar a una red de tres formas diferentes: a través del protocolo RIP, a través del protocolo OSPF y mediante una ruta estática establecida por el administrador de la red. ¿Qué ruta instalará el router en su tabla de encaminamiento?",
+    "options": [
+      "Luego de aplicar el algoritmo de la ruta más corta, instalará la de menor métrica",
+      "La determinada por el administrador de la red",
+      "La aprendida a través del protocolo RIP",
+      "La aprendida a través del protocolo OSPF",
+      "Es indiferente, puede ser cualquiera de las tres rutas"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 103,
+    "page": 48,
+    "text": "Un router analiza sus interfaces de salida y detecta que una de ellas se está congestionando. Cuál de los siguientes métodos de control de congestión se implementa, si el router selecciona al azar algunos paquetes de la cola y los descarta:",
+    "options": [
+      "Detección tardía al azar",
+      "Notificación explícita de congestión",
+      "Paquete regulador",
+      "Algoritmo de cubeta con ficha",
+      "Detección temprana aleatoria"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 104,
+    "page": 49,
+    "text": "Determine cuál de las siguientes afirmaciones define mejor la función de la distancia administrativa:",
+    "options": [
+      "Determina la foma en la cual el router debe consultar la tabla de encaminamiento",
+      "Permite que el administrador conozca la distancia que existe entre dos routeres ABR",
+      "Permite configurar rutas estáticamente",
+      "Determina la confiabilidad de una ruta cuando se están implementando varios protocolos IGP",
+      "Mide la distancia en saltos entre un dispositivo origen y destino"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 105,
+    "page": 49,
+    "text": "Cuáles de las siguientes características corresponden a los servicios diferenciados como método para brindar calidad de servicio",
+    "options": [
+      "Se implementa a través del protocolo ICMP",
+      "Se marcan los paquetes cerca del origen según la clase a la que pertenecen",
+      "Todos los flujos viajan por el mismo camino físico",
+      "Se reservan recursos extremo a extremo para cada flujo individual",
+      "Se establecen contratos SLA entre el cliente y la red"
+    ],
+    "correctIndexes": [
+      1,
+      4
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 106,
+    "page": 49,
+    "text": "El modelado de tráfico en el servidor como técnica para brindar Calidad de Servicio consiste en:",
+    "options": [
+      "c. Almacenar los datos en el buffer del cliente antes de su reproducción",
+      "a. Controlar y regular la tasa promedio y las ráfagas en el origen de una transmisión de datos",
+      "b. Establecer el ritmo con el cual los datos llegan al host receptor",
+      "d. Brindar suficientes recursos de red para evitar que se produzca congestión"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 107,
+    "page": 50,
+    "text": "¿Cuál de las siguientes opciones podría ser la solución para evitar bucles en el algoritmo de vector distancia?",
+    "options": [
+      "Cambiar a otro algoritmo",
+      "Dividir la red en áreas",
+      "Ninguna de las opciones",
+      "Deshabilitar la interfaz afectada",
+      "Configurar el horizonte dividido en el router"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 108,
+    "page": 50,
+    "text": "Una empresa contrata a un administrador de red, debido a que posee muchos router. El administrador de red, va a implementar el protocolo de enrutamiento OSPF con áreas. El profesional de IT le plantea. ¿Cómo se va a comunicar un equipo del área 3 con un servidor de mail del área 6? El administrador le contesta:",
+    "options": [
+      "El paquete atravesará primero el área 3 y luego se comunicará directamente con el área 6",
+      "No se pueden comunicar porque pertenecen a sistemas autonomos diferentes",
+      "Los dispositivos no se pueden comunicar porque pertenecen a áreas diferentes",
+      "El paquete atravesará primero el área 3, luego el área 0 y por último el área 6",
+      "Se deberá ejecutar el protocolo BGP para esta comunicación"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 109,
+    "page": 51,
+    "text": "¿Cuál es la métrica que utiliza RIP?",
+    "options": [
+      "Consto del enlace",
+      "Saltos",
+      "Ancho de banda",
+      "Retardo",
+      "Ninguna de las opciones"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 110,
+    "page": 51,
+    "text": "Un router aprende cómo llegar a una red a través de varios protocolos de encaminamiento, como RIP, OSPF e IS-IS. ¿Cuál de las tres rutas instalara en su tabla de encaminamiento? * RIP : AD = 120 * OSPF : AD =110 * IS-IS : AD = 115",
+    "options": [
+      "La aprendida a través del protocolo OSPF porque posee menor distancia administrativa.",
+      "Primero ejecutara el algoritmo de Dijkstra y luego elegirá la ruta más corta.",
+      "La aprendida por el protocolo RIP porque es la que posee menor métrica.",
+      "La primera a través del protocolo RIP porque es la que posee menor número de saltos.",
+      "La aprendida a través del protocolo IS-IS porque es un protocolo de gateway exterior"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 111,
+    "page": 52,
+    "text": "El agente relay del protocolo DHCP",
+    "options": [
+      "Es el software que se debe instalar en el cliente DHCP",
+      "Es la forma de identificar al administrador de una red LAN",
+      "Permite que un host pueda obtener una direccion IP desde un servidor DHCP ubicado en otra LAN",
+      "Requiere que se instale un servidor DHCP en cada LAN"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 112,
+    "page": 52,
+    "text": "A partir de la siguiente topología, indique cuál de los siguientes comandos se deberá configurar en el router R6 para definir su correspondiente par BGP interno:",
+    "options": [
+      "neighbor 150.4.1.1 remote-as 500",
+      "neighbor 150.4.1.2 remote-as 500",
+      "neighbor 170.1.2.1 remote-as 600",
+      "neighbor 170.1.2.1 remote-as 500",
+      "neighbor 150.4.1.2 remote-as 600",
+      "neighbor 170.1.2.2 remote-as 500"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 113,
+    "page": 53,
+    "text": "¿Cuáles de los siguientes dispositivos intervienen en el control de flujo (seleccione varios)?",
+    "options": [
+      "f. Routers",
+      "b. Enlaces de comunicación",
+      "e. Access Points",
+      "a. Servidores",
+      "d. Switches",
+      "c. Computadoras"
+    ],
+    "correctIndexes": [
+      3,
+      5
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 114,
+    "page": 53,
+    "text": "¿Qué tipo de paquete envía el router a toda la red (inundación controlada) al implementar el algoritmo de estado de enlace?",
+    "options": [
+      "ECHO",
+      "LSP",
+      "HELLO",
+      "ninguna de las opciones"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 115,
+    "page": 54,
+    "text": "Cuál de las siguientes características corresponde a la tecnología MPLS (seleccione dos opciones):",
+    "options": [
+      "Permite intercambiar actualizaciones de encaminamiento entre los routers de diferente fabricante",
+      "Los routers mantienen tablas y conmutan rápidamente sin desencapsular hasta la capa de Interred",
+      "Los routers conmutan en función de la dirección IP destino",
+      "Se pueden reservar recursos en toda la ruta que siguen los datos",
+      "Los routers conmutan según la dirección MAC de las tramas"
+    ],
+    "correctIndexes": [
+      1,
+      3
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 116,
+    "page": 54,
+    "text": "En el algoritmo de cubeta con goteo como método para brindar Calidad de servicio",
+    "options": [
+      "Es un algoritmo apto para rafagas de datos",
+      "Es un algoritmo flexible, apto para rafagas de datos, pero en forma controlada",
+      "El flujo de salida tiene una tasa variable",
+      "Los host pueden acumular fichas y luego enviar varios paquetes juntos a la red",
+      "Un flujo de datos desigual se convierte en un flujo continuo de datos a la red"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 117,
+    "page": 54,
+    "text": "¿Qué dirección IPv4 de destino suele utilizar un cliente DHCP al enviar * inicialmente DHCPDISCOVER?",
+    "options": [
+      "0.0.0.0",
+      "127.0.0.1",
+      "224.0.0.1",
+      "255.255.255.255"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 118,
+    "page": 55,
+    "text": "De acuerdo con la siguiente captura de tráfico realizada con el programa * Wireshark, podemos observar en pantalla que (seleccione 5 opciones): (por suerte la foto se ve re bien)",
+    "options": [
+      "El host de destino respondió con un paquete de ICMP Echo Replay con un TTL igual a 65 que se fue decrementando por cada nodo por el que pasó",
+      "El host de destino respondió con un paquete de ICMP Echo Replay con un TTL igual a 53",
+      "El host de origen está en Internet y el host de destino está en una LAN",
+      "El comando que se ejecutó en el host origen fue ¡emp config",
+      "El host de destino estaba a 53 saltos del host origen",
+      "El protocolo que se utilizo es de capa de Interred",
+      "El host de destino estaba a 12 saltos del host origen",
+      "El comando que se ejecutó en el host origen fue tracert",
+      "El host de origen está en una LAN y el host de destino está en intemet"
+    ],
+    "correctIndexes": [
+      0,
+      5,
+      6,
+      7,
+      8
+    ],
+    "isMulti": true,
+    "wasIncorrect": true,
+    "responseCorrectText": [
+      "El host de destino estaba a 12 saltos del host origen",
+      "El host de origen está en una LAN y el host de destino está en intemet",
+      "El host de destino respondió con un paquete de ICMP Echo Replay con un TTL igual a 65 que se fue decrementando por cada nodo por el que pasó",
+      "El comando que se ejecutó en el host origen fue tracert",
+      "El protocolo que se utilizo es de capa de Interred"
+    ]
+  },
+  {
+    "sourceIndex": 119,
+    "page": 56,
+    "text": "La máquina A le está enviando datos a través de Internet a la máquina B. Cuando un router advierte que uno de sus enlaces está congestionado, activa dos bits en el encabezado IP para indicar a la máquina B, que existe congestión. El destino (B) observa que hay congestión e informa al origen (A) al enviarle un paquete de respuesta activando un bit de la capa de transporte. Cuando A se entera de la congestión, reduce la tasa de paquetes hacia la red. Este método de control de congestión es:",
+    "options": [
+      "De ciclo cerrado, Notificación explícita de congestión",
+      "De ciclo cerrado, Detección Temprana Aleatoria",
+      "De ciclo cerrado, Paquete Regulador",
+      "De ciclo abierto, Paquete Regulador",
+      "De ciclo abierto, Notificación explícita de congestión",
+      "De ciclo abierto, Detección Temprana Aleatoria"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 120,
+    "page": 56,
+    "text": "¿Qué significa “destino inaccesible'' en ICMP?",
+    "options": [
+      "Campo de encabezado inválido",
+      "No se pudo entregar el paquete",
+      "Ninguna de las opciones",
+      "Busca un router cercano",
+      "El tiempo de vida llegó a cero"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 121,
+    "page": 57,
+    "text": "Cuáles de los siguientes mensajes DHCP se construyen en el servidor (seleccione dos opciones):",
+    "options": [
+      "DHCP release",
+      "DHCP request",
+      "DHCP nack",
+      "DHCP offer",
+      "DHCP discover",
+      "DHCP decline"
+    ],
+    "correctIndexes": [
+      2,
+      3
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 122,
+    "page": 57,
+    "text": "El equipo de la recepción tiene la siguiente configuración de red, ¿es posible saber si la red a la que pertenece este equipo tiene configurado VLANs?",
+    "options": [
+      "Si",
+      "No"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 123,
+    "page": 58,
+    "text": "¿Cuántos grupos 0000 representa :: en 2001:db8::1/128? *",
+    "options": [
+      "7",
+      "6",
+      "4",
+      "2"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 124,
+    "page": 58,
+    "text": "Un router analiza cada una de sus interfaces de salida. Si la interfaz serial 2 entra en \"estado de advertencia\", el router:",
+    "options": [
+      "Avisa a todos los routers vecinos que actualicen sus tablas de encaminamiento",
+      "Envía un paquete regulador al origen de cada paquete de la cola de la interfaz serial 2",
+      "Envía un paquete regulador al destino de todos los paquetes de la cola de la interfaz serial 2",
+      "Inunda un paquete regulador por todas sus interfaces",
+      "Inunda un paquete regulador por todas las interfaces menos por la serial 2"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 125,
+    "page": 59,
+    "text": "A una computadora se le está por vencer el tiempo de alquiler de una dirección IP, Indique cuál de los siguientes mensajes debe enviar el cliente al servidor DHCP para solicitar la extensión del mismo:",
+    "options": [
+      "DHCP discover",
+      "DHCP request",
+      "DHCP offer",
+      "DHCP inform",
+      "DHCP ack",
+      "DHCP decline"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 126,
+    "page": 59,
+    "text": "¿Cuál de las siguientes opciones no es una propiedad que debe tener un algoritmo de enrutamiento?",
+    "options": [
+      "Ninguna de las opciones",
+      "Exactitud",
+      "Robustez",
+      "Complejidad",
+      "Estabilidad"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 127,
+    "page": 59,
+    "text": "Un mensaje ARP-request es:",
+    "options": [
+      "Anycast",
+      "Broadcast",
+      "Unicast",
+      "Multicast"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 128,
+    "page": 60,
+    "text": "Los algoritmos de encaminamiento deben cumplir ciertos requisitos. Cuál de los siguientes hace referencia a “...Cuando una red está operativa, es deseable que funcione de manera continua sin fallas, a pesar de los cambios de topología y de tráfico…”",
+    "options": [
+      "Exactitud",
+      "Eficiencia",
+      "Robustez",
+      "Sencillez",
+      "Equidad"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 129,
+    "page": 60,
+    "text": "La máquina A está enviando información a la máquina B. En un momento determinado un router marca un paquete porque está experimentando congestión. Cuando la red entrega el paquete, el destino puede observar que hay congestión e informa al emisor sobre ello cuando envíe un paquete de respuesta. ¿Cómo se denomina el método de control de congestión?",
+    "options": [
+      "Detección temprana aleatoria",
+      "Paquete regulador",
+      "Detección tardia al azar",
+      "Algoritmo de cubeta con ficha",
+      "Notificación explicita de congestión"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 130,
+    "page": 61,
+    "text": "Según lo visto en clase, las causas de congestión pueden ser: (2 opciones)",
+    "options": [
+      "a. Medios de transmisión",
+      "b. Routers con procesadores lentos",
+      "c. Paquetes reguladores",
+      "d. Control de flujo",
+      "e. Modernización incompleta"
+    ],
+    "correctIndexes": [
+      1,
+      4
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 131,
+    "page": 61,
+    "text": "¿Cuál de las siguientes direcciones es inválida por utilizar :: más de una * vez?",
+    "options": [
+      "::1",
+      "Ninguna de las opciones",
+      "2001:db8::1",
+      "fe80::1",
+      "2001:db8::5"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 132,
+    "page": 62,
+    "text": "Un router multiprotocolo tiene configurado los protocolos RIP y OSPF. Si aprende como llegar a la misma red a través de ambos protocolos, incorporará a la tabla de encaminamiento la ruta aprendida a través de:",
+    "options": [
+      "RIP porque fue la ruta que aprendió primero",
+      "OSPF porque es un protocolo inter sistema autónomo",
+      "OSPF porque posee la distancia administrativa de 1",
+      "Cualquiera de los dos protocolos, ya que el router es multiprotocolo",
+      "OSPF porque tiene distancia administrativa menor que RIP"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 133,
+    "page": 62,
+    "text": "Indique cuales de las siguientes son caracteristicas del encaminamiento estatico (seleccione dos)",
+    "options": [
+      "El administrador de la red se encarga de configurar las rutas que seguiran los paquetes",
+      "Requiere el intercambio de informacion de encaminamiento entre routers",
+      "Brinda seguridad ya que el administrador conoce por donde viajan los paquetes en la red",
+      "Las tablas de encaminamiento se configuran automaticamente",
+      "Se adapta a los cambios de trafico de la red",
+      "Se adapta automaticamente a los cambios de topologia de la red"
+    ],
+    "correctIndexes": [
+      0,
+      2
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 134,
+    "page": 63,
+    "text": "Un router recibe dos paquetes los cuales provienen desde el router A. El primero posee la versión=4 y el segundo la versión=6. Si el router tiene registrado que el último paquete que inundó del router A fue el que tenía la versión=5. Indique cuál de las afirmaciones es correcta si se está implementando el algoritmo de inundación controlada:",
+    "options": [
+      "El router enviará por todas las interdaces de salida, ambos paquetes",
+      "El router no inundará ninguno de los paquetes recibidos, ya que la inundación es controlada",
+      "El router enviará por todas las interfaces de salida menos por la que entró, ambos paquetes",
+      "El router avisará por todas las interfaces de salida menos por la que entró, sólo el paquete con versión=5",
+      "El router enviará por todas las interfaces de salida menos por la que entró, sólo el paquete versión=4",
+      "El router enviará por todas las interfaces de salida menos por la que entró, sólo el paquete con versión=6"
+    ],
+    "correctIndexes": [
+      5
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 135,
+    "page": 63,
+    "text": "El administrador de red configura la dirección IPV6 2001::2460:34:0:980 en un servidor. ¿Cuál de las siguientes direcciones se colocará en la dirección origen de la cabecera de los paquetes IPV6 cuando el servidor envíe datos a la red?",
+    "options": [
+      "2001:0000:2460:0034:0000:0000:0980",
+      "2001:0000:0000:0000:2460:0034:0000:0000:0980",
+      "2001:0000:0000:0000:2460:0034:0000:0980",
+      "2001:0000:0000:2460:0034:0000:0000:0980",
+      "2001:0000:0000:0000:2460:34:0000:980"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 136,
+    "page": 64,
+    "text": "Cuáles de las siguientes características corresponden al protocolo \"Routing Information Protocol\", seleccione dos opciones:",
+    "options": [
+      "Utiliza el algoritmo de Dijkstra para el cálculo de la mejor ruta",
+      "Es un protocolo de gateway inter sistema autónomo",
+      "Elige la mejor ruta en función del ancho de banda de los enlaces",
+      "Independientemente de que se produzcan cambios en la red, envia actualizaciones periodicas",
+      "Por desconocimiento de la topología de la red, pueden producirse bucles",
+      "Los routers mantienen una base de datos topológica"
+    ],
+    "correctIndexes": [
+      3,
+      4
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 137,
+    "page": 64,
+    "text": "En una empresa se ha implementado el algoritmo de cubeta con fichas (Token). Un host tiene acumulada 10 token que se fueron generando cada 1 segundo. El host necesita enviar 15 paquetes. ¿Qué hará el host?",
+    "options": [
+      "Transmite los 10 paquetes juntos y espera para acular token para enviar los 5 restantes juntos",
+      "Transmite los 15 paquetes juntos",
+      "Transmite 5 paquetes juntos y luego un paquete cada 1 segundo",
+      "Va a transmitir 10 paquetes juntos y luego un paquete cada 1 segundo",
+      "Transmite un paquete en cada segundo"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 138,
+    "page": 65,
+    "text": "A partir de la siguiente topologia, responda la siguiente pregunta: En caso * de que la PC3 quiere mandar un mensaje al Servidor, para lo cual necesita la MAC del mismo, pero tiene su tabla ARP vacia, si envia un ARP request a cada dispositivos le llegaria este mensaje?",
+    "options": [
+      "ROUTER 3",
+      "ROUTER 2",
+      "ROUTER 4",
+      "PC2",
+      "SERVIDOR",
+      "ROUTER 1",
+      "PC1"
+    ],
+    "correctIndexes": [
+      3,
+      5,
+      6
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 139,
+    "page": 66,
+    "text": "Una computadora tiene asignada una dirección IP a través del protocolo BOOTP. El administrador la traslada a otra red de la empresa. Para que dicha computadora posea conectividad, será necesario:",
+    "options": [
+      "Mantener la dirección IP y modificar la dirección MAC en el servidor BOOTP",
+      "No hacer nada, la PC ya tiene conectividad",
+      "Actualiza la dirección MAC en el servidor BOOTP",
+      "Actualizar la dirección IP y modificar la dirección MAC",
+      "Actualizar la dirección IP y mantener la dirección MAC en el servidor BOOTP"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 140,
+    "page": 66,
+    "text": "¿Cuál de los siguientes protocolos permite que una PC obtenga una dirección IPv4 a partir de su dirección MAC, debiendo configurar tablas con mapas estáticos y permanentes en el servidor y requiriendo que la PC esté siempre en la misma LAN que el servidor?",
+    "options": [
+      "Address Resolution protocol",
+      "Bootstrap protocol (porque se puede tener servidores en diferentes LAN)",
+      "Internet Protocol",
+      "DHCP versión 6",
+      "Reverse Address Resolution protocol cuáles de las siguientes son disciplinas de gestión de colas de paquetes WFQ - PQ - Priority FIFO Weighted - Puntuación Queuing Fair Queuing a a los los en en el el en en que que a a los los en en la la de de mayor mayor y y seguir seguir de de prioridad prioridad a a los los en en la la de de mayor mayor y y seguir seguir de de priorida priorida"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 141,
+    "page": 68,
+    "text": "Cuál de las siguientes características corresponden al protocolo RIP versión 1, seleccione dos opciones:",
+    "options": [
+      "Envía actualizaciones de encaminamiento a dirección 255.255.255.255",
+      "Permite que se implementen máscaras de subred de longitud variable",
+      "Envía parte o toda su tabla de encaminamiento a la dirección 224.0.0.9",
+      "Envía la máscara de subred en sus actualizaciones de encaminamiento",
+      "Es un protocolo classful"
+    ],
+    "correctIndexes": [
+      0,
+      4
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 142,
+    "page": 68,
+    "text": "¿Cuál es el concepto de congestión?",
+    "options": [
+      "A la perdida de paquetes, produciendo bajo rendimiento en la red",
+      "Al utilizar nuevos protocolos de enrutamiento",
+      "Cuando un dispositivo de enrutamiento queda fuera de servicio",
+      "Al incremento del retardo y demasiados paquetes y se degrada el desempeño de la red",
+      "Ninguna de las opciones"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 143,
+    "page": 68,
+    "text": "¿Cuántos bits representa cada grupo hexadecimal de una dirección IPv6? *",
+    "options": [
+      "16",
+      "8",
+      "4",
+      "32",
+      "24"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 144,
+    "page": 69,
+    "text": "El agente relay Dynamic Host Configuration Protocol se ejecuta cuando",
+    "options": [
+      "Cliente y servidor DHCP están en la misma subred",
+      "Cliente y servidor DHCP se encuentran en diferentes subredes (Existe un servidor para todas las redes de una empresa)",
+      "Existe un servidor DHCP en cada subred de la empresa",
+      "Cliente y servidor web se encuentran en diferentes subredes"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 145,
+    "page": 69,
+    "text": "Cuál es el período en que se transmiten los paquetes a la red, en el método de cubeta con goteo?",
+    "options": [
+      "Ninguna de las opciones",
+      "Cuando el emisor acule las fichas necesarias",
+      "En cada pulso de reloj",
+      "En cualquier momento"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 146,
+    "page": 69,
+    "text": "Un host está usando una aplicación de audio bajo demanda. ¿Que pasara en el cliente si aplicamos la técnica de almacenamiento en búfer para alcanzar una buena calidad de servicio?",
+    "options": [
+      "Ninguna de las opciones",
+      "Un hueco en la reproducción",
+      "El cliente no lo notará",
+      "Se produce una desconexión"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 147,
+    "page": 70,
+    "text": "Cuál de las siguientes características define el control de congestión de ciclo abierto:",
+    "options": [
+      "Supervisan el sistema pra detectar cuando y donde ocurren congestiones",
+      "Se toman acciones correctivas una vez que se detecta la congestion",
+      "Informan a los hosts involucrados sobre la congestion",
+      "Limitan la cantidad de paquetes que ingresan a la red, independientemente si la red está congestionada o no",
+      "Los routers analizan la longitud de sus colas de salida"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 148,
+    "page": 70,
+    "text": "Suponga que la máquina fuente en la red 802.11 desea enviar un paquete a la máquina de destino en la red Ethernet. Como éstas tecnologías son distintas y además están separadas por otro tipo de red (MPLS), se requiere un procesamiento adicional. ¿Qué se debe hacer y quien lo hace?",
+    "options": [
+      "Se agrega una etiqueta y lo realiza la maquina fuente",
+      "Se agrega una etiqueta y la maquina fuente crea una conexión de extremo a extremo",
+      "Se agrega una etiquta y lo hace el primer router de la red MPLS para poder enviar el paquete al segundo router",
+      "Se agrega una etiqueta en la maquina fuente y la maquina destino lo saca"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 149,
+    "page": 71,
+    "text": "Un router tiene configurado un protocolo que implementa el algoritmo de estado de enlace. ¿Qué hará el router después que obtiene todos los paquetes de estado de enlace desde los otros routers?",
+    "options": [
+      "Arma la tabla de encaminamiento con dicha informacion",
+      "Envia la tabla de encaminamiento a los vecinos directamente conectados",
+      "Construye el grafo de red y ejecuta el algoritmo de Dijkstra",
+      "Inunda los paquetes HELLO recibidos desde sus vecinos directamente conectados",
+      "Inunda los paquetes por todas sus interfaces"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 150,
+    "page": 71,
+    "text": "Cuál de las siguientes es una tecnología que se utiliza actualmente en los ISP de internet, es orientada a conexión, muy rápida, incorpora una etiqueta y conmuta en base a ella, garantizando que todos los datos sigan el mismo camino físico",
+    "options": [
+      "VLAN",
+      "Sistema Autonomo",
+      "IP",
+      "RSVP",
+      "TCP",
+      "MPLS"
+    ],
+    "correctIndexes": [
+      5
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 151,
+    "page": 72,
+    "text": "Sea la siguiente dirección IPv6: * 2001:00ab:f000:0cde:0000:0000:1234:0000 Indique el formato correcto de la escritura comprimida",
+    "options": [
+      "2001:ab:f:cde::1234:0",
+      "2001:ab::cde::1234",
+      "2001:0ab:f:0cde::1234:0",
+      "2001:ab:f000:cde::1234:0",
+      "2001:ab:f000:cde::1234"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 152,
+    "page": 72,
+    "text": "Al referirnos a calidad de servicio, hay que tener en cuenta algunos parámetros, por ejemplo confiabilidad alta. ¿Qué aplicación necesita este parámetro?",
+    "options": [
+      "Video bajo demanda",
+      "Inicio de sesión remoto",
+      "Audio bajo demanda",
+      "Ninguna de las opciones",
+      "Telefonía"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 153,
+    "page": 72,
+    "text": "¿Cuál es el algoritmo más utilizado cuando implementamos enrutamiento por vector distancia?",
+    "options": [
+      "El algoritmo de inundación",
+      "Ninguna de las opciones",
+      "El algoritmo de Bellman-Ford",
+      "El algoritmo de Dijkstra"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 154,
+    "page": 73,
+    "text": "¿Qué sucede si llegan 2 paquetes con la misma prioridad, cuando se implementa programación de paquetes con el algoritmo por prioridad?",
+    "options": [
+      "Se elimina el primer paquete y se trata el segundo por ser más nuevo",
+      "Se envían mediante FIFO",
+      "Se descarta el último paquete que llegó con la misma prioridad",
+      "Se activa otro búfer en el router para posteriormente tratarlo"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 155,
+    "page": 74,
+    "text": "Indicar cuál será la interfaz de salida que utilizará el router de Madrid para enviar tráfico a la red 192.168.2.0 si el sistema autónomo está ejecutando el protocolo OSPF? (Esto es una respuesta a escribir, pero lo dejo como MC)",
+    "options": [
+      "Ninguna de las opciones",
+      "Se1/0/1",
+      "se0/1/0",
+      "Se/0/1/0",
+      "Se0/0/1",
+      "Se0/1/0"
+    ],
+    "correctIndexes": [
+      5
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 156,
+    "page": 75,
+    "text": "Cuántas veces se calcula el checksum en IPv6 si hay una distancia de 8 * routers",
+    "options": [
+      "16",
+      "No se utiliza checksum en IPv6",
+      "8",
+      "18"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 157,
+    "page": 75,
+    "text": "El servidor DHCP ubicado en la LAN-1 puede configurar los parámetros IP de una computadora ubicada en la LAN-2 y otra computadora ubicada en la LAN-3",
+    "options": [
+      "Si las computadoras tienen habilitada la configuración estática",
+      "Siempre debe haber un servidor DHCP en cada LAN",
+      "Sólo si está configurada la función Agente Relay del protocolo DHCP",
+      "Nunca",
+      "Si las computadoras no tienen configurada la puerta de enlace o gateway por defecto"
+    ],
+    "correctIndexes": [],
+    "isMulti": false,
+    "wasIncorrect": true,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 158,
+    "page": 75,
+    "text": "Nicki nicole?",
+    "options": [
+      "seee TODAAAAA",
+      "ni ahi"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 159,
+    "page": 76,
+    "text": "Una PC desea intercambiar datos con otra computadora ubicada en otro país, utilizando el protocolo IPv6. Para ello será necesario utilizar:",
+    "options": [
+      "Direcciones globales",
+      "Se puede utilizar cualquier tipo de dirección IPv6",
+      "Direcciones locales únicas",
+      "Direcciones de enlace local",
+      "Direcciones privadas"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 160,
+    "page": 76,
+    "text": "Un cliente contrata un servicio a un ISP, fijando un acuerdo entre el cliente y proveedor sobre todo el tráfico del cliente. ¿Cómo se denomina esta técnica para alcanzar una buena calidad de servicio?",
+    "options": [
+      "Programación o planificación de paquetes",
+      "Almacenamiento en buffer",
+      "Modelado de tráfico",
+      "Sobre aprovisionamiento"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 161,
+    "page": 77,
+    "text": "Indique cuáles de las siguientes son soluciones para evitar que se presenten bucles en el algoritmo de vector distancia (seleccione dos opciones)",
+    "options": [
+      "Enviar actualizaciones apenas se produzca un cambio en la topología de la red",
+      "Configurar el horizonte dividido en el router",
+      "Desactivar las interfaces del router",
+      "Armar un grafo de la red y ejecutar el algoritmo de la ruta más corta",
+      "Inundar las tablas de encaminamiento",
+      "Aumentar la métrica al infinito"
+    ],
+    "correctIndexes": [
+      0,
+      1
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 162,
+    "page": 77,
+    "text": "¿En qué casos preferiría configurar enrutamiento dinámico (en lugar del estático) en los routers de mi LAN?",
+    "options": [
+      "Necesito tener disponibles rutas alternativas para llegar a un destino por si se caen las principales",
+      "El tamaño de la red es muy grande y los cambios en ella son constantes",
+      "La topología de la LAN es estable y no sufre demasiadas modificaciones a lo largo del tiempo",
+      "Posee varias conexiones a Internet y debo hacer balanceo de carga entre los distintos proveedores de Internet en función de la carga de los enlaces",
+      "El tipo de tráfico es constante y no presenta ráfagas",
+      "El administrador de red no puede estar siempre presente para solucionar fallas de conectividad, pero la red debe encontrar la manera de seguir funcionando",
+      "Los dispositivos de enrutamiento de los que dispongo, no poseen suficiente capacidad de procesamiento (memoria y velocidad)",
+      "Presenta una única conexión a un proveedor de servicios de Internet"
+    ],
+    "correctIndexes": [
+      0,
+      1,
+      3,
+      5
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 163,
+    "page": 78,
+    "text": "¿Qué algoritmo usan los router para calcular la ruta más corta entre dos nodos de un grafo?",
+    "options": [
+      "Enrutamiento estatico",
+      "Inundación",
+      "Vector distancia",
+      "Bellman - Ford",
+      "Dijkstra",
+      "Ninguna de las opciones"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 164,
+    "page": 78,
+    "text": "La dirección MAC destino en un paquete enviado desde una PC que está arrancando, hacia un servidor Dynamic Host Configuration Protocol es:",
+    "options": [
+      "FF-FF-FF-FF-FF-FF",
+      "dirección IP del servidor DHCP",
+      "0.0.0.0",
+      "1111-1111-1111-1111",
+      "255.255.255.255"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 165,
+    "page": 79,
+    "text": "¿Cuál de las siguientes opciones no es un objetivo principal de IPv6?",
+    "options": [
+      "Poner mas atencion en cuanto al tipo de servicio, en especial para los datos en tiempo real",
+      "Simplificar el protocolo para permitir a los enrutadores procesar los paquetes con mas rapidez",
+      "Ninguna de las opciones",
+      "Proporcionar mayor seguridad (autenticación y privacidad)",
+      "Agrandar el tamaño de las tablas de enrutamiento"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 166,
+    "page": 79,
+    "text": "Al personal de IT, le comunican que tiene que cambiar un puesto de trabajo a otra oficina, que pertenece a otra red, dentro de la empresa. Viene el administrador de red a revisar la configuración del equipo y corrobora que está todo correcto, sin hacer cambio alguno. ¿Qué tipo de direccionamiento se está utilizando?",
+    "options": [
+      "Direccionamiento dinamico",
+      "El administrador de red no se dió cuenta que es otra red",
+      "Direccionamiento estatico",
+      "Ninguna de las opciones"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 167,
+    "page": 79,
+    "text": "¿En función de qué parámetro se procesan los paquetes cuando se utiliza encolamiento justo ponderado?",
+    "options": [
+      "Al tamaño del paquete",
+      "Al peso de la cola",
+      "Al paquete que tiene mas prioridad",
+      "Al primero que llega"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 168,
+    "page": 80,
+    "text": "Uno de los métodos que se implementa para brindar calidad de servicio son los Servicios Diferenciados. ¿Cuáles de las siguientes son algunas de sus características? (Seleccione dos opciones):",
+    "options": [
+      "Todos los datos viajan por el mismo camino físico",
+      "Los paquetes se marcan según su importancia en los campos TOS y clase de Los paquetes se marcan según su importancia en los campos TOS y clase de tráfico del protocolo IP",
+      "Se requiere el protocolo de reserva RSVP",
+      "Es necesario reservar recursos extremo a extremo para cada flujo individual",
+      "No se garantiza QoS extremo a extremo",
+      "El router debe mantener información de estado de cada flujo individual"
+    ],
+    "correctIndexes": [
+      1,
+      4
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 169,
+    "page": 80,
+    "text": "Cuando una red o parte de ella recibe más tráfico de datos de lo que es capaz de cursar, produciendo demoras en la entrega de los datos y pérdida de información, para solucionar el problema se debe implementar",
+    "options": [
+      "Calidad de servicio",
+      "Control de flujo",
+      "Control de carga",
+      "Ventana estática",
+      "Control de congestión",
+      "Encaminamiento"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 170,
+    "page": 81,
+    "text": "En redes de datagramas se usa Explicit Congestion Notification - ECN, cuando un router advierte congestión en alguno de sus enlaces activados bits en el paquete IP (ECN).",
+    "options": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 171,
+    "page": 81,
+    "text": "Cual de los siguientes parámetros de Calidad de Servicio es importante * en la transmision de telefonia IP:",
+    "options": [
+      "Retardo",
+      "Variacion del retardo",
+      "Confidencialidad",
+      "Ancho de banda"
+    ],
+    "correctIndexes": [
+      0,
+      1
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 172,
+    "page": 81,
+    "text": "Identifique características del método de control de congestión en redes de datagramas.: (2 opciones)",
+    "options": [
+      "a. Paquetes reguladores",
+      "c. Detección temprana aleatoria",
+      "b. Deciden cuándo aceptar tráfico nuevo",
+      "d. Deciden cuándo y cuáles paquetes descartar"
+    ],
+    "correctIndexes": [
+      0,
+      1
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 173,
+    "page": 82,
+    "text": "Qué utilizan los routers para calcular la ruta más corta entre dos nodos de un grafo:",
+    "options": [
+      "El algoritmo de vector de enlace",
+      "El algoritmo de Dijkstra",
+      "El algoritmo de Bellman Ford",
+      "El algoritmo de vector distancia",
+      "El algoritmo de inundación"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 174,
+    "page": 82,
+    "text": "¿Cuál es el puerto origen en un mensaje DHCP DISCOVER?",
+    "options": [
+      "67",
+      "69",
+      "70",
+      "68",
+      "Ninguna de las opciones"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 175,
+    "page": 82,
+    "text": "El comando arp -s permite",
+    "options": [
+      "e. Asignar una dirección IP a una interfaz",
+      "d. Visualizar la caché ARP",
+      "a. Definir una entrada dinámica en la tabla ARP",
+      "c. Definir una entrada estática en la tabla de encaminamiento",
+      "b. Definir una entrada estática en la tabla ARP",
+      "f. Borrar una entrada de la tabla ARP"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 176,
+    "page": 83,
+    "text": "¿Cada cuanto tiempo envía anuncios de rutas sobre conexiones punto a punto el protocolo BGP?",
+    "options": [
+      "60 segundos",
+      "15 segundos",
+      "Ninguna de las opciones",
+      "30 segundos"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 177,
+    "page": 83,
+    "text": "¿Qué hace el router después de recibir todos los paquetes de estado de enlace de los otros router de la red?",
+    "options": [
+      "Solo arma la tabla de enrutamiento",
+      "Ninguna de las opciones",
+      "Ejecuta el algoritmo de Dijstra y arma su tabla de enrutamiento",
+      "Devuelve a cada router de la red la confirmación de recepción del paquete",
+      "Construye la base de datos de la topologia y arma el grafo de la red"
+    ],
+    "correctIndexes": [
+      4
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 178,
+    "page": 84,
+    "text": "La máquina A intercambia un archivo con la máquina B de otra red. La información circula por una red de datagramas. ¿Cual de las siguientes opciones es correcta?",
+    "options": [
+      "Los paquetes pertenecientes al archivo pueden llegar desordenados al dispositivo destino",
+      "Solo es necesario encaminar el primer paquete del archivo",
+      "Todos los paquetes del archivo viajarán por la misma ruta",
+      "La decisión de encaminamiento se basa en una etiqueta que se le agrega al archivo",
+      "Los routers deberán desencapsular hasta la capa de transporte para encaminar cada paquete del archivo segun la dirección IP de destino"
+    ],
+    "correctIndexes": [
+      0
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 179,
+    "page": 84,
+    "text": "Cual de los siguientes mensajes DHCP se construyen en el cliente (dos opciones)",
+    "options": [
+      "DHCP decline",
+      "DHCP Nack",
+      "DHCP request",
+      "DHCP Ack",
+      "DHCP offer"
+    ],
+    "correctIndexes": [
+      0,
+      2
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 180,
+    "page": 85,
+    "text": "Cuál de las siguientes características define el control de congestión de ciclo abierto:",
+    "options": [
+      "Se toman acciones correctivas una vez que se detecta la congestion",
+      "Informan a los host involucrados sobre la congestion",
+      "Evitan que se produzca congestion limitando la cantidad de paquetes que ingresan a la red",
+      "Monitorean el sistema para detectar cuando y donde ocurren congestiones"
+    ],
+    "correctIndexes": [
+      2
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 181,
+    "page": 85,
+    "text": "Indique cuál de las siguientes es una ventaja del algoritmo de vector * distancia:",
+    "options": [
+      "Todos los routers poseen la misma tabla de encaminamiento",
+      "Converge rapidamente",
+      "Todos los routers comparten la misma base de datos topologica",
+      "Los routers pueden armar el grafo de la red",
+      "Utiliza el algoritmo de Dijkstra para calcular las rutas mas cortas",
+      "No se requieren routers con gran capacidad de procesamiento"
+    ],
+    "correctIndexes": [
+      5
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 182,
+    "page": 86,
+    "text": "El protocolo DHCP pertenece a cuál de las siguientes capas de la pila de protocolos TCP/IP:",
+    "options": [
+      "a. Transporte",
+      "b. Aplicación",
+      "e. Interred",
+      "d. Enlace",
+      "C. Presentación",
+      "f. Sesión"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 183,
+    "page": 86,
+    "text": "Cuáles de las siguientes características corresponden al protocolo RIP (selecciones TRES opciones):",
+    "options": [
+      "Utiliza el ancho de banda como métrica",
+      "La versión 2 del protocolo soporta VLSM y CIDR",
+      "La métrica que utiliza es el número de saltos",
+      "Puede manejar un número ilimitado de saltos",
+      "Posibilidad de existencia de bucles",
+      "Tiene convergencia rápida en redes grandes"
+    ],
+    "correctIndexes": [
+      1,
+      2,
+      4
+    ],
+    "isMulti": true,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 184,
+    "page": 87,
+    "text": "Considerando que se está implementando el algoritmo de cubeta con fichas (token) y el host tiene acumuladas 20 fichas que se generaron cada 1 seg. Si se tienen que transmitir 25 paquetes a la red, el host podrá",
+    "options": [
+      "Transmitir un paquete cada 1 seg.",
+      "Transmitir 20 paquetes juntos y luego un paquete cada 1 seg.",
+      "Transmitir 20 paquetes juntos. Esperar 5 segundos y transmitir los 5 paquetes en una ráfaga",
+      "Transmitir 5 paquetes juntos y luego un paquete cada 1 seg.",
+      "Transmitir los 25 paquetes juntos"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 185,
+    "page": 87,
+    "text": "El almacenamiento en buffer como técnica para brindar QoS consiste en",
+    "options": [
+      "Descartar paquetes a medida que se llena el buffer",
+      "Almacenar los datos en el buffer del cliente antes de su reproducción"
+    ],
+    "correctIndexes": [
+      1
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 186,
+    "page": 87,
+    "text": "La PC-A envía datos a la PC-B, la cual está a 5 routers de distancia. En la mitad de la ruta, se detecta que el paquete no se puede entregar a la PC B. El router que detecta el problema construye un mensaje ICMP. ¿Qué direcciones se colocan en la cabecera del paquete IP de dicho mensaje?",
+    "options": [
+      "Origen: IP de B – destino: IP de A",
+      "Origen: MAC del router – destino: MAC de A",
+      "Origen: IP del router – destino: IP de B",
+      "Origen: IP del router – destino: IP de A",
+      "Origen: MAC de B – destino: MAC de A"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  },
+  {
+    "sourceIndex": 187,
+    "page": 88,
+    "text": "Cual de las siguientes afirmaciones es correcta con respecto al encaminamiento en redes de circuitos virtuales:",
+    "options": [
+      "La capa de transporte en el destino de la transmision debera ordenar los paquetes que lleguen desordenados",
+      "Los paquetes del archivo seguiran rutas diferentes para incrementar la performance de la red",
+      "Los paquetes pertenecientes a una misma comunicacion pueden seguir caminos diferentes",
+      "Todos los paquetes de una comunicacion viajan por la misma ruta fisica",
+      "Los paquetes deben numerarse para que se puedan ordenar en el destino"
+    ],
+    "correctIndexes": [
+      3
+    ],
+    "isMulti": false,
+    "wasIncorrect": false,
+    "responseCorrectText": []
+  }
+]
