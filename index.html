@@ -285,6 +285,10 @@
     .notice::before { background: var(--amber); }
     .feedback strong { color: var(--text); }
     .notice { color: var(--amber); background: var(--amber-soft); }
+    .review-session { display: flex; align-items: center; gap: .8rem; margin: 1rem 0; padding: .85rem 1rem; border: 1px solid color-mix(in srgb, var(--cyan) 38%, var(--border)); border-radius: 13px; color: var(--muted); background: color-mix(in srgb, var(--cyan-soft) 38%, var(--surface)); }
+    .review-session strong { color: var(--text); }
+    .review-session.complete { border-color: color-mix(in srgb, var(--green) 48%, var(--border)); background: var(--green-soft); }
+    .review-session.complete strong { color: var(--green); }
     .question-note { margin-top: .9rem; border: 1px solid var(--border); border-radius: 12px; background: color-mix(in srgb, var(--surface-2) 70%, transparent); }
     .question-note summary { padding: .7rem .85rem; color: var(--muted); cursor: pointer; font-size: .88rem; font-weight: 720; }
     .question-note[open] summary { border-bottom: 1px solid var(--border); color: var(--cyan); }
@@ -436,6 +440,21 @@
     }
     function scorableQuestions() { return QUESTIONS.filter(q => !q.observed); }
     function getAnswer(id) { return state.answers[id]; }
+    function isRetryingReview(id) {
+      return currentView.type === "review" && currentView.retryIds?.includes(id) && !currentView.completedRetryIds?.includes(id);
+    }
+    function renderedAnswer(id) { return isRetryingReview(id) ? null : getAnswer(id); }
+    function completeReviewRetry(id) {
+      if (!isRetryingReview(id)) return;
+      currentView.completedRetryIds.push(id);
+    }
+    function reviewProgressMarkup() {
+      const total = currentView.retryIds?.length || 0;
+      const completed = currentView.completedRetryIds?.length || 0;
+      const pending = total - completed;
+      const complete = total > 0 && pending === 0;
+      return `<aside class="review-session ${complete ? "complete" : ""}" data-review-progress><span aria-hidden="true">${complete ? "✓" : "↻"}</span><span><strong>${complete ? "Repaso finalizado." : `Te quedan ${pending} pregunta${pending === 1 ? "" : "s"} por reintentar.`}</strong> ${complete ? "Tus respuestas quedan visibles y las preguntas resueltas ya no figuran como errores." : `Completaste ${completed} de ${total}.`}</span></aside>`;
+    }
     function getNote(id) { return state.notes?.[id] || ""; }
     function saveNote(id, value) {
       if (!state.notes) state.notes = {};
@@ -503,11 +522,13 @@
       saveState(); render();
     }
     function showBlock(block) { currentView = { type: "block", block }; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
+    function showFilteredTopic() { currentView = { type: "filtered", block: 0 }; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
     function showStats() { currentView = { type: "stats", block: 0 }; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
     function reviewErrors() {
       const errors = QUESTIONS.filter(q => getAnswer(q.id) && !getAnswer(q.id).correct);
       if (!errors.length) return showToast("Todavía no hay respuestas incorrectas para repasar.");
-      currentView = { type: "review", block: 0 }; render(); window.scrollTo({ top: 0, behavior: "smooth" });
+      currentView = { type: "review", block: 0, retryIds: errors.map(q => q.id), completedRetryIds: [] };
+      render(); window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     function render() {
@@ -522,17 +543,29 @@
       const t = totals(); const progress = pct(t.answered, t.total);
       const blocks = Math.ceil(QUESTIONS.length / BLOCK_SIZE);
       let cards = "";
-      for (let b = 0; b < blocks; b++) {
-        const source = QUESTIONS.filter(q => q.block === b);
-        const visible = source.filter(matchesFilters);
-        const scored = source.filter(q => !q.observed);
+      if (state.topic !== "all") {
+        const visible = ordered(QUESTIONS.filter(matchesFilters));
+        const scored = visible.filter(q => !q.observed);
         const answered = scored.filter(q => getAnswer(q.id)).length;
-        cards += `<button class="block-card" type="button" onclick="showBlock(${b})" style="--delay:${b * 45}ms">
-          <span class="block-index">Nodo ${String(b + 1).padStart(2,"0")}</span>
-          <h3>Bloque ${b + 1}</h3>
-          <div class="block-copy">Preguntas ${b * BLOCK_SIZE + 1} a ${Math.min((b + 1) * BLOCK_SIZE, QUESTIONS.length)} · ${visible.length} visibles</div>
+        cards = `<button class="block-card" type="button" onclick="showFilteredTopic()" style="--delay:0ms">
+          <span class="block-index">Selección por tema</span>
+          <h3>${esc(TOPICS[state.topic])}</h3>
+          <div class="block-copy">${visible.length} preguntas reunidas en una sola sesión</div>
           <div class="bar" aria-label="${answered} de ${scored.length} respondidas"><span style="width:${pct(answered, scored.length)}%"></span></div>
         </button>`;
+      } else {
+        for (let b = 0; b < blocks; b++) {
+          const source = QUESTIONS.filter(q => q.block === b);
+          const visible = source.filter(matchesFilters);
+          const scored = source.filter(q => !q.observed);
+          const answered = scored.filter(q => getAnswer(q.id)).length;
+          cards += `<button class="block-card" type="button" onclick="showBlock(${b})" style="--delay:${b * 45}ms">
+            <span class="block-index">Nodo ${String(b + 1).padStart(2,"0")}</span>
+            <h3>Bloque ${b + 1}</h3>
+            <div class="block-copy">Preguntas ${b * BLOCK_SIZE + 1} a ${Math.min((b + 1) * BLOCK_SIZE, QUESTIONS.length)} · ${visible.length} visibles</div>
+            <div class="bar" aria-label="${answered} de ${scored.length} respondidas"><span style="width:${pct(answered, scored.length)}%"></span></div>
+          </button>`;
+        }
       }
       const topicOptions = Object.entries(TOPICS).map(([value,label]) => `<option value="${value}" ${state.topic === value ? "selected" : ""}>${esc(label)}</option>`).join("");
       return `<section>
@@ -545,7 +578,7 @@
           <div class="control-row"><div class="select-wrap"><label class="sr-only" for="topicSelect">Tema</label><select id="topicSelect" onchange="setTopic(this.value)">${topicOptions}</select></div><div class="chips">${statusChip("all","Todas")}${statusChip("unanswered","No respondidas")}${statusChip("incorrect","Incorrectas")}${statusChip("favorites","Favoritas")}</div></div>
           <div class="control-row"><label class="toggle"><input type="checkbox" ${state.shuffleQuestions ? "checked" : ""} onchange="toggleShuffle('questions',this.checked)"> Mezclar preguntas</label><label class="toggle"><input type="checkbox" ${state.shuffleOptions ? "checked" : ""} onchange="toggleShuffle('options',this.checked)"> Mezclar opciones</label><span class="spacer"></span><button class="btn primary" type="button" onclick="showLearn()">Modo Aprender</button><button class="btn" type="button" onclick="reviewErrors()">Repasar errores</button><button class="btn danger" type="button" onclick="resetFiltered()">Reiniciar selección</button></div>
         </div>
-        <div class="section-head"><h2>Bloques de práctica</h2><span class="section-meta">${QUESTIONS.filter(matchesFilters).length} preguntas coinciden con los filtros</span></div>
+        <div class="section-head"><h2>${state.topic === "all" ? "Bloques de práctica" : "Práctica por tema"}</h2><span class="section-meta">${QUESTIONS.filter(matchesFilters).length} preguntas coinciden con los filtros</span></div>
         <div class="block-grid">${cards}</div>
       </section>`;
     }
@@ -634,18 +667,23 @@
     function renderQuestionsView() {
       let list, title, meta;
       if (currentView.type === "review") {
-        list = QUESTIONS.filter(q => getAnswer(q.id) && !getAnswer(q.id).correct).sort((a,b) => (getAnswer(b.id).errors || 0) - (getAnswer(a.id).errors || 0));
-        title = "Repaso de errores"; meta = `${list.length} preguntas ordenadas por dificultad`;
+        const retryIds = currentView.retryIds || [];
+        list = retryIds.map(id => QUESTIONS.find(q => q.id === id)).filter(Boolean).sort((a,b) => (getAnswer(b.id).errors || 0) - (getAnswer(a.id).errors || 0));
+        title = "Repaso de errores"; meta = `${list.length} preguntas para volver a responder`;
+      } else if (currentView.type === "filtered") {
+        list = ordered(QUESTIONS.filter(matchesFilters));
+        title = TOPICS[state.topic] || "Selección filtrada"; meta = `${list.length} preguntas reunidas en una sola sesión`;
       } else {
         const allInBlock = QUESTIONS.filter(q => q.block === currentView.block);
         list = ordered(allInBlock.filter(matchesFilters));
         title = `Bloque ${currentView.block + 1}`; meta = `${list.length} de ${allInBlock.length} preguntas visibles`;
       }
-      return `<section><div class="view-head"><button class="icon-btn" type="button" onclick="showDashboard()" aria-label="Volver al inicio">←</button><div><p class="eyebrow">Sesión activa</p><h1>${esc(title)}</h1></div><span class="section-meta">${esc(meta)}</span></div>${list.length ? `<div class="questions">${list.map((q,i) => renderQuestion(q,i)).join("")}</div>${renderBlockCompletion()}` : `<div class="empty"><h2>No hay preguntas para mostrar</h2><p>Cambiá los filtros o volvé al inicio para elegir otro bloque.</p><button class="btn" type="button" onclick="clearFilters()">Quitar filtros</button></div>`}</section>`;
+      const reviewSession = currentView.type === "review" ? reviewProgressMarkup() : "";
+      return `<section><div class="view-head"><button class="icon-btn" type="button" onclick="showDashboard()" aria-label="Volver al inicio">←</button><div><p class="eyebrow">Sesión activa</p><h1>${esc(title)}</h1></div><span class="section-meta">${esc(meta)}</span></div>${reviewSession}${list.length ? `<div class="questions">${list.map((q,i) => renderQuestion(q,i)).join("")}</div>${renderBlockCompletion()}` : `<div class="empty"><h2>No hay preguntas para mostrar</h2><p>Cambiá los filtros o volvé al inicio para elegir otro bloque.</p><button class="btn" type="button" onclick="clearFilters()">Quitar filtros</button></div>`}</section>`;
     }
     function renderQuestion(q, position) {
       if (isMatrixQuestion(q)) return renderMatrixQuestion(q, position);
-      const answer = getAnswer(q.id); const favorite = isFavorite(q.id); const options = orderedOptions(q);
+      const answer = renderedAnswer(q.id); const favorite = isFavorite(q.id); const options = orderedOptions(q);
       let status = "";
       if (q.observed) status = `<span class="status warning">Pregunta observada</span>`;
       else if (answer) status = `<span class="status ${answer.correct ? "correct" : "wrong"}">${answer.correct ? "✓ Correcta" : "× Incorrecta"}</span>`;
@@ -667,7 +705,7 @@
     }
 
     function renderMatrixQuestion(q, position) {
-      const answer = getAnswer(q.id); const favorite = isFavorite(q.id);
+      const answer = renderedAnswer(q.id); const favorite = isFavorite(q.id);
       let status = "";
       if (answer) status = `<span class="status ${answer.correct ? "correct" : "wrong"}">${answer.correct ? "✓ Correcta" : "× Incorrecta"}</span>`;
       const images = q.images.map(src => `<img class="q-image" src="${src}" alt="Diagrama correspondiente a la pregunta ${q.sourceIndex}">`).join("");
@@ -684,7 +722,7 @@
     }
     function answerMatrix(questionId) {
       const q = QUESTIONS.find(item => item.id === questionId);
-      if (!q || !isMatrixQuestion(q) || getAnswer(questionId)) return;
+      if (!q || !isMatrixQuestion(q) || (getAnswer(questionId) && !isRetryingReview(questionId))) return;
       const selections = {};
       const missing = q.matrixRows.filter(row => {
         const input = document.querySelector(`input[name="${q.id}-${row.id}"]:checked`);
@@ -693,8 +731,11 @@
       });
       if (missing.length) { document.getElementById(`error-${questionId}`).textContent = "Seleccioná una opción en cada fila antes de verificar."; return; }
       const correct = q.matrixRows.every(row => selections[row.id] === row.correctOptionId);
-      state.answers[questionId] = { selected: Object.values(selections), matrixSelections: selections, correct, attempts: 1, errors: correct ? 0 : 1 };
+      const previous = getAnswer(questionId);
+      state.answers[questionId] = { selected: Object.values(selections), matrixSelections: selections, correct, attempts: (previous?.attempts || 0) + 1, errors: correct ? 0 : (previous?.errors || 0) + 1 };
+      completeReviewRetry(questionId);
       saveState(); updateAnsweredCard(questionId); updateBlockSummary(); showToast(correct ? "Correspondencias correctas" : "Revisá las correspondencias marcadas");
+      updateReviewProgress();
     }
     function updateAnsweredCard(questionId) {
       const q = QUESTIONS.find(item => item.id === questionId);
@@ -757,16 +798,24 @@
       card.insertAdjacentHTML("beforeend", `<div class="feedback"><strong>${answer.correct ? "Bien resuelto." : "Revisá las correspondencias señaladas."}</strong>${q.sourceComment ? ` ${esc(q.sourceComment)}` : ""}</div>`);
     }
     function evaluate(questionId, selected) {
-      const q = QUESTIONS.find(item => item.id === questionId); if (!q || q.observed || getAnswer(questionId)) return;
+      const q = QUESTIONS.find(item => item.id === questionId); if (!q || q.observed || (getAnswer(questionId) && !isRetryingReview(questionId))) return;
       const expected = q.correctIds.slice().sort(); const actual = selected.slice().sort();
       const correct = expected.length === actual.length && expected.every((id,i) => id === actual[i]);
-      state.answers[questionId] = { selected, correct, attempts: 1, errors: correct ? 0 : 1 };
+      const previous = getAnswer(questionId);
+      state.answers[questionId] = { selected, correct, attempts: (previous?.attempts || 0) + 1, errors: correct ? 0 : (previous?.errors || 0) + 1 };
+      completeReviewRetry(questionId);
       saveState(); updateAnsweredCard(questionId); updateBlockSummary(); showToast(correct ? "Respuesta correcta" : "Respuesta incorrecta: revisá las opciones marcadas");
+      updateReviewProgress();
     }
     function updateBlockSummary() {
       if (currentView.type !== "block") return;
       const summary = document.querySelector("[data-block-summary]");
       if (summary) summary.outerHTML = renderBlockSummary(currentView.block);
+    }
+    function updateReviewProgress() {
+      if (currentView.type !== "review") return;
+      const progress = document.querySelector("[data-review-progress]");
+      if (progress) progress.outerHTML = reviewProgressMarkup();
     }
     function toggleFavorite(id, button) {
       if (isFavorite(id)) state.favorites = state.favorites.filter(value => value !== id); else state.favorites.push(id);
