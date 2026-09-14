@@ -120,7 +120,7 @@
     .view-enter { animation: view-in 220ms var(--ease-out) both; }
     @keyframes view-in { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
 
-    .btn, .icon-btn, .chip, .block-card, .favorite, .option {
+    .btn, .icon-btn, .chip, .block-card, .favorite, .option, .lab-card {
       transition: transform 140ms var(--ease-out), opacity 160ms var(--ease-out), color 180ms ease, background-color 180ms ease, border-color 180ms ease;
     }
     .btn:active, .icon-btn:active, .chip:active, .block-card:active, .favorite:active { transform: scale(.97); }
@@ -191,6 +191,65 @@
     .study-option { cursor: default; }
     .study-option:not(.correct) { color: var(--muted); opacity: .72; }
     .study-option.correct { font-weight: 680; }
+
+    .lab-promo {
+      position: relative; overflow: hidden; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 1rem; align-items: center;
+      margin-bottom: 1.6rem; padding: 1.15rem; border: 1px solid var(--border-strong); border-radius: 18px;
+      background: linear-gradient(135deg, rgba(43,211,254,.13), rgba(66,119,255,.1) 58%, var(--surface));
+      box-shadow: 0 18px 44px rgba(0,0,0,.13);
+    }
+    .lab-promo::after { content: ""; position: absolute; right: 9rem; bottom: -72px; width: 180px; height: 180px; border: 1px solid var(--border-strong); border-radius: 50%; opacity: .18; }
+    .lab-promo-icon { display: grid; place-items: center; width: 52px; height: 52px; border: 1px solid var(--border-strong); border-radius: 15px; color: var(--cyan); background: var(--surface); font-size: 1.45rem; }
+    .lab-promo-copy, .lab-promo .btn { position: relative; z-index: 1; }
+    .lab-promo h2 { margin: 0 0 .15rem; }
+    .lab-promo p { margin: 0; color: var(--muted); }
+    .lab-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
+    .lab-card {
+      position: relative; overflow: hidden; display: grid; min-height: 235px; padding: 1.15rem; border: 1px solid var(--border); border-radius: 18px;
+      color: var(--text); background: linear-gradient(145deg, var(--surface), color-mix(in srgb, var(--surface-2) 42%, var(--surface))); cursor: pointer; text-align: left;
+      animation: card-in 220ms var(--ease-out) both; animation-delay: var(--delay, 0ms);
+    }
+    .lab-card::after { content: ""; position: absolute; right: -46px; bottom: -62px; width: 155px; height: 155px; border: 1px solid var(--border-strong); border-radius: 50%; opacity: .18; }
+    .lab-card.complete { border-color: color-mix(in srgb, var(--green) 56%, var(--border)); box-shadow: 0 18px 46px color-mix(in srgb, var(--green-soft) 48%, transparent); }
+    .lab-card.complete::after { border-color: var(--green); }
+    .lab-card-top { display: flex; align-items: center; gap: .55rem; }
+    .lab-difficulty { margin-left: auto; color: var(--muted); font-size: .76rem; font-weight: 720; }
+    .lab-complete-badge { display: inline-flex; align-items: center; gap: .25rem; min-height: 26px; padding: .18rem .5rem; border: 1px solid color-mix(in srgb, var(--green) 55%, var(--border)); border-radius: 999px; color: var(--green); background: var(--green-soft); font-size: .72rem; font-weight: 800; white-space: nowrap; }
+    .lab-card h2 { margin: .9rem 0 .35rem; font-size: 1.25rem; }
+    .lab-card p { margin: 0; color: var(--muted); font-size: .91rem; }
+    .lab-card-progress { align-self: end; position: relative; z-index: 1; margin-top: 1rem; }
+    .lab-card-progress span { color: var(--muted); font-size: .8rem; }
+    .lab-case-head { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 1rem; align-items: end; margin-bottom: 1rem; }
+    .lab-case-head h1 { margin-bottom: .25rem; }
+    .lab-progress-box { min-width: 185px; padding: .8rem; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
+    .lab-progress-box strong { display: block; margin-bottom: .35rem; }
+    .lab-progress-box .bar { margin-top: .4rem; }
+    .lab-scenario { margin-bottom: 1rem; padding: 1.1rem; border: 1px solid var(--border-strong); border-radius: 18px; background: linear-gradient(145deg, var(--surface), color-mix(in srgb, var(--surface-2) 40%, var(--surface))); }
+    .lab-scenario h2 { margin-bottom: .35rem; }
+    .lab-scenario > p { margin-bottom: 1rem; color: var(--muted); }
+    .lab-diagram { display: grid; grid-template-columns: repeat(var(--nodes), minmax(110px,1fr)); align-items: center; gap: .5rem; overflow-x: auto; padding: .8rem; border: 1px solid var(--border); border-radius: 14px; background: color-mix(in srgb, var(--bg) 55%, var(--surface)); }
+    .lab-node { position: relative; min-width: 110px; padding: .7rem; border: 1px solid var(--border-strong); border-radius: 12px; background: var(--surface-2); text-align: center; }
+    .lab-node:not(:last-child)::after { content: "→"; position: absolute; left: calc(100% + .13rem); top: 50%; width: .25rem; color: var(--cyan); font-weight: 900; transform: translateY(-50%); }
+    .lab-node strong { display: block; font-size: .88rem; }
+    .lab-node small { display: block; margin-top: .12rem; color: var(--muted); font-size: .72rem; }
+    .lab-facts { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .55rem; margin-top: .7rem; }
+    .lab-fact { padding: .65rem .75rem; border: 1px solid var(--border); border-radius: 11px; background: color-mix(in srgb, var(--surface-2) 78%, transparent); }
+    .lab-fact span { display: block; color: var(--muted); font-size: .72rem; font-weight: 750; letter-spacing: .05em; text-transform: uppercase; }
+    .lab-fact strong { display: block; margin-top: .12rem; font-size: .9rem; }
+    .lab-step-list { display: grid; gap: 1rem; width: min(100%, 980px); margin-inline: auto; }
+    .lab-step { position: relative; overflow: hidden; padding: 1.15rem; border: 1px solid var(--border); border-radius: 18px; background: var(--surface); }
+    .lab-step::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, var(--cyan), var(--blue), transparent 72%); }
+    .lab-step.answered-correct { border-color: color-mix(in srgb, var(--green) 52%, var(--border)); }
+    .lab-step.answered-correct::before { background: linear-gradient(90deg, var(--green), transparent 72%); }
+    .lab-step.answered-wrong { border-color: color-mix(in srgb, var(--red) 52%, var(--border)); }
+    .lab-step.answered-wrong::before { background: linear-gradient(90deg, var(--red), transparent 72%); }
+    .lab-step.locked { opacity: .58; }
+    .lab-step-top { display: flex; align-items: center; gap: .55rem; margin-bottom: .75rem; }
+    .lab-step-title { margin: 0 0 .85rem; font-size: 1.04rem; line-height: 1.55; }
+    .lab-lock { margin-left: auto; color: var(--muted); font-size: .8rem; font-weight: 720; }
+    .lab-completion { margin-top: 1rem; }
+    .lab-completion:empty { display: none; }
+    .lab-complete-actions { display: flex; gap: .65rem; flex-wrap: wrap; }
 
     .section-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 1.6rem 0 .85rem; }
     .section-head h2 { margin: 0; }
@@ -349,12 +408,14 @@
       .btn:hover, .icon-btn:hover, .chip:hover { border-color: var(--border-strong); background-color: var(--surface-2); }
       .btn.primary:hover { background-color: color-mix(in srgb, var(--cyan) 88%, white); }
       .block-card:hover { transform: translateY(-3px); border-color: var(--border-strong); }
+      .lab-card:hover { transform: translateY(-3px); border-color: var(--border-strong); }
       .option:not(.disabled):hover { transform: translateX(3px); border-color: var(--border-strong); background-color: var(--surface-3); }
       .favorite:hover { color: var(--amber); border-color: color-mix(in srgb, var(--amber) 45%, var(--border)); }
     }
     @media (max-width: 850px) {
       .metrics, .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .block-grid { grid-template-columns: 1fr; }
+      .lab-grid { grid-template-columns: 1fr; }
       .block-card { min-height: 150px; }
     }
     @media (max-width: 620px) {
@@ -379,6 +440,10 @@
       .control-row .btn { flex: 1 1 auto; }
       .learn-toolbar { grid-template-columns: 1fr; }
       .learn-intro { grid-template-columns: 1fr; }
+      .lab-promo, .lab-case-head { grid-template-columns: 1fr; }
+      .lab-promo .btn { width: 100%; }
+      .lab-progress-box { min-width: 0; }
+      .lab-facts { grid-template-columns: 1fr; }
       .view-head { align-items: flex-start; flex-wrap: wrap; }
       .view-head .section-meta { width: 100%; margin-left: 0; }
       .topic-tag { display: none; }
@@ -387,8 +452,8 @@
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .view-enter, .block-card, .question-card, .status { animation: none; }
-      .btn, .icon-btn, .chip, .block-card, .favorite, .option, .bar > span, .toast, .sequence-item, .sequence-slot, .text-answer input { transition-property: color, background-color, border-color, opacity; transition-duration: 120ms; }
+      .view-enter, .block-card, .question-card, .lab-card, .status { animation: none; }
+      .btn, .icon-btn, .chip, .block-card, .favorite, .option, .lab-card, .bar > span, .toast, .sequence-item, .sequence-slot, .text-answer input { transition-property: color, background-color, border-color, opacity; transition-duration: 120ms; }
       .btn:active, .icon-btn:active, .chip:active, .block-card:active, .favorite:active, .favorite.on { transform: none; }
     }
   </style>
@@ -403,6 +468,7 @@
     </div>
     <nav class="top-actions" aria-label="Navegación principal">
       <button class="btn" type="button" onclick="showDashboard()">Inicio</button>
+      <button class="btn" type="button" onclick="showLab()">Laboratorio</button>
       <button class="btn" type="button" onclick="showLearn()">Aprender</button>
       <button class="btn" type="button" onclick="showStats()">Estadísticas</button>
       <button class="icon-btn" id="themeButton" type="button" onclick="toggleTheme()" aria-label="Cambiar tema" title="Cambiar tema">☀</button>
@@ -577,6 +643,152 @@
       }
     );
 
+    const LAB_CASES = [
+      {
+        id: "lab-dhcp-relay", number: 1, topic: "arpDhcp", difficulty: "Intermedio",
+        title: "Una sede nueva no obtiene dirección IP",
+        summary: "Seguí una negociación DHCP a través de un agente relay y determiná qué ocurre en cada etapa.",
+        scenario: "Un equipo nuevo se conecta a la LAN 10.20.30.0/24. El servidor DHCP está en otra red y el router 10.20.30.1 actúa como agente relay.",
+        nodes: [{ title: "Cliente nuevo", detail: "Sin dirección IP" }, { title: "DHCP Relay", detail: "10.20.30.1" }, { title: "Servidor DHCP", detail: "10.10.0.10" }],
+        facts: [{ label: "Red del cliente", value: "10.20.30.0/24" }, { label: "Oferta disponible", value: "10.20.30.50" }],
+        steps: [
+          { id: "discover-source", prompt: "El cliente todavía no tiene una dirección configurada. ¿Qué dirección IP de origen usa en DHCP DISCOVER?", options: [{ id: "zero", text: "0.0.0.0" }, { id: "offered", text: "10.20.30.50" }, { id: "relay", text: "10.20.30.1" }], correctIds: ["zero"], explanation: "Antes de recibir y aceptar una concesión, el cliente inicia la negociación usando 0.0.0.0 como origen." },
+          { id: "relay-pool", prompt: "¿Qué dato permite al servidor elegir el pool correspondiente a la LAN del cliente?", options: [{ id: "giaddr", text: "La dirección del agente relay indicada en giaddr" }, { id: "ttl", text: "El TTL del datagrama" }, { id: "client-port", text: "El puerto físico del cliente en el switch" }], correctIds: ["giaddr"], explanation: "El relay informa la red de procedencia mediante giaddr; el servidor usa ese dato para seleccionar el ámbito correcto." },
+          { id: "lease-final", prompt: "El servidor ofreció 10.20.30.50. ¿En qué momento puede considerarse confirmada la concesión?", options: [{ id: "offer", text: "Al recibir DHCP OFFER" }, { id: "request", text: "Al enviar DHCP REQUEST" }, { id: "ack", text: "Al recibir DHCP ACK" }], correctIds: ["ack"], explanation: "La oferta propone una dirección, pero la asignación queda confirmada al completar la negociación con DHCP ACK." }
+        ]
+      },
+      {
+        id: "lab-arp-remote", number: 2, topic: "arpDhcp", difficulty: "Inicial",
+        title: "ARP al comunicarse con otra red",
+        summary: "Separá las direcciones de capa 2 y capa 3 cuando el destino está fuera de la LAN.",
+        scenario: "PC-A (192.168.10.20/24) debe enviar un paquete a PC-B (192.168.20.30/24). Su puerta de enlace es 192.168.10.1.",
+        nodes: [{ title: "PC-A", detail: "192.168.10.20" }, { title: "Router R1", detail: "192.168.10.1" }, { title: "PC-B", detail: "192.168.20.30" }],
+        facts: [{ label: "Máscara", value: "/24" }, { label: "Destino", value: "Otra subred" }],
+        steps: [
+          { id: "arp-target", prompt: "Antes de enviar la primera trama, ¿por qué dirección IP pregunta PC-A mediante ARP?", options: [{ id: "gateway", text: "192.168.10.1, la puerta de enlace" }, { id: "remote-host", text: "192.168.20.30, el host remoto" }, { id: "broadcast", text: "192.168.10.255, el broadcast de la LAN" }], correctIds: ["gateway"], explanation: "ARP sólo resuelve vecinos del enlace local. Para un destino remoto, PC-A necesita la MAC de su puerta de enlace." },
+          { id: "first-frame", prompt: "Seleccioná los dos datos correctos de la primera trama que sale de PC-A.", multi: true, options: [{ id: "ip-b", text: "La IP de destino es 192.168.20.30" }, { id: "mac-r1", text: "La MAC de destino pertenece a la interfaz de R1" }, { id: "mac-b", text: "La MAC de destino pertenece directamente a PC-B" }, { id: "ip-r1", text: "La IP de destino es 192.168.10.1" }], correctIds: ["ip-b", "mac-r1"], explanation: "El destino IP extremo sigue siendo PC-B; la trama del primer salto se entrega a la MAC del router." },
+          { id: "router-forward", prompt: "Cuando R1 reenvía el paquete hacia la segunda LAN, ¿qué cambia normalmente?", options: [{ id: "l2", text: "El encabezado de capa 2 para el nuevo enlace" }, { id: "destination-ip", text: "La IP de destino pasa a ser la del router" }, { id: "source-ip", text: "La IP de origen pasa a ser la del router" }], correctIds: ["l2"], explanation: "El router desencapsula la trama y crea otra para el siguiente enlace; las IP de los extremos se conservan si no interviene NAT." }
+        ]
+      },
+      {
+        id: "lab-ipv6-icmp", number: 3, topic: "ip", difficulty: "Intermedio",
+        title: "Diagnóstico de un salto IPv6",
+        summary: "Aplicá Neighbor Discovery, direcciones link-local e ICMPv6 en una ruta entre redes.",
+        scenario: "Host-A usa 2001:db8:10::25/64 y debe llegar a 2001:db8:20::40. Su router anuncia fe80::1 como puerta de enlace.",
+        nodes: [{ title: "Host-A", detail: "2001:db8:10::25" }, { title: "R1", detail: "fe80::1" }, { title: "Host-B", detail: "2001:db8:20::40" }],
+        facts: [{ label: "Prefijo local", value: "2001:db8:10::/64" }, { label: "Siguiente salto", value: "fe80::1" }],
+        steps: [
+          { id: "next-hop", prompt: "¿Qué dirección debe resolver Host-A para entregar el paquete al primer salto?", options: [{ id: "router-ll", text: "fe80::1, la dirección link-local del router" }, { id: "host-b", text: "2001:db8:20::40, el destino remoto" }, { id: "all-routers", text: "ff02::2, todos los routers" }], correctIds: ["router-ll"], explanation: "El siguiente salto está en el enlace local y puede identificarse por su dirección link-local." },
+          { id: "resolution-protocol", prompt: "¿Qué mecanismo obtiene la dirección de enlace del siguiente salto en IPv6?", options: [{ id: "nd", text: "Neighbor Discovery mediante ICMPv6" }, { id: "arp", text: "ARP" }, { id: "dhcp", text: "DHCPv6 obligatoriamente" }], correctIds: ["nd"], explanation: "IPv6 reemplaza ARP por Neighbor Discovery, que utiliza mensajes ICMPv6." },
+          { id: "hop-limit", prompt: "Si el Hop Limit llega a cero en un router intermedio, ¿qué mensaje se espera?", options: [{ id: "time", text: "ICMPv6 Time Exceeded" }, { id: "redirect", text: "ICMPv6 Redirect" }, { id: "echo", text: "ICMPv6 Echo Reply" }], correctIds: ["time"], explanation: "El router descarta el paquete cuyo Hop Limit se agotó y notifica al origen con Time Exceeded." }
+        ]
+      },
+      {
+        id: "lab-route-selection", number: 4, topic: "routing", difficulty: "Intermedio",
+        title: "Elegir la mejor ruta sin mezclar métricas",
+        summary: "Decidí qué entrada instalará el router cuando aprende el mismo prefijo por fuentes distintas.",
+        scenario: "R1 aprende 172.16.50.0/24 mediante una ruta estática, OSPF y RIP. Luego el administrador retira la ruta estática.",
+        nodes: [{ title: "Ruta estática", detail: "AD 1" }, { title: "OSPF", detail: "AD 110 · costo 20" }, { title: "RIP", detail: "AD 120 · 2 saltos" }],
+        facts: [{ label: "Prefijo", value: "172.16.50.0/24" }, { label: "Objetivo", value: "Entrada en la tabla" }],
+        steps: [
+          { id: "with-static", prompt: "Con las tres fuentes activas, ¿qué ruta se instala?", options: [{ id: "static", text: "La estática, por su menor distancia administrativa" }, { id: "ospf", text: "OSPF, porque su costo es 20" }, { id: "rip", text: "RIP, porque sólo tiene 2 saltos" }], correctIds: ["static"], explanation: "Para el mismo prefijo aprendido por fuentes distintas se compara primero la distancia administrativa." },
+          { id: "without-static", prompt: "Al retirar la estática, ¿cuál queda preferida?", options: [{ id: "ospf", text: "OSPF, porque AD 110 es menor que AD 120" }, { id: "rip", text: "RIP, porque 2 es menor que 20" }, { id: "both", text: "Ambas, porque sus métricas valen distinto" }], correctIds: ["ospf"], explanation: "Las métricas de RIP y OSPF no se comparan entre sí; primero se elige el protocolo por distancia administrativa." },
+          { id: "same-protocol", prompt: "R1 descubre dos rutas OSPF al mismo prefijo, con costos 20 y 35. ¿Cuál prefiere?", options: [{ id: "cost20", text: "La de costo 20" }, { id: "cost35", text: "La de costo 35" }, { id: "newest", text: "La aprendida más recientemente" }], correctIds: ["cost20"], explanation: "Una vez elegida la fuente OSPF, se compara la métrica propia del protocolo: el menor costo." }
+        ]
+      },
+      {
+        id: "lab-ospf-bgp", number: 5, topic: "protocols", difficulty: "Avanzado",
+        title: "Atravesar áreas y sistemas autónomos",
+        summary: "Identificá el papel de los routers de borde en una topología OSPF conectada por BGP.",
+        scenario: "Una red del área OSPF 1 llega a otra del área 2. Ambas se conectan al backbone. El router de borde del AS 65001 intercambia rutas con el AS 65002.",
+        nodes: [{ title: "Área 1", detail: "OSPF" }, { title: "Área 0", detail: "Backbone" }, { title: "AS 65001 ↔ 65002", detail: "eBGP" }],
+        facts: [{ label: "Origen", value: "Área OSPF 1" }, { label: "Destino", value: "Otro sistema autónomo" }],
+        steps: [
+          { id: "area-path", prompt: "Para comunicar el área 1 con el área 2, ¿por qué área debe pasar normalmente el tráfico interárea?", options: [{ id: "area0", text: "Por el área 0 o backbone" }, { id: "direct", text: "Directamente entre las áreas 1 y 2" }, { id: "external", text: "Por el AS 65002" }], correctIds: ["area0"], explanation: "En el diseño OSPF normal, las áreas no backbone se conectan a través del área 0." },
+          { id: "abr-role", prompt: "¿Cómo se denomina al router que conecta el área 1 con el área 0?", options: [{ id: "abr", text: "ABR" }, { id: "dr", text: "DR" }, { id: "rr", text: "Route Reflector" }], correctIds: ["abr"], explanation: "Un Area Border Router mantiene información de las áreas que interconecta y propaga rutas entre ellas." },
+          { id: "bgp-session", prompt: "Seleccioná las afirmaciones correctas sobre el enlace entre AS 65001 y AS 65002.", multi: true, options: [{ id: "ebgp", text: "Es una sesión eBGP" }, { id: "different-as", text: "Cada vecino configura como remote-as el AS del otro extremo" }, { id: "same-as", text: "Ambos extremos deben pertenecer al mismo AS" }, { id: "ospf-metric", text: "La decisión se basa únicamente en el costo OSPF" }], correctIds: ["ebgp", "different-as"], explanation: "eBGP conecta vecinos de sistemas autónomos diferentes; cada extremo identifica el número de AS remoto." }
+        ]
+      },
+      {
+        id: "lab-congestion", number: 6, topic: "congestion", difficulty: "Intermedio",
+        title: "Distinguir congestión de control de flujo",
+        summary: "Diagnosticá dos cuellos de botella parecidos y elegí el mecanismo que actúa en cada uno.",
+        scenario: "Una transferencia atraviesa un router con cola creciente. Al mismo tiempo, el receptor procesa datos más lentamente de lo que los recibe.",
+        nodes: [{ title: "Emisor", detail: "Alta tasa" }, { title: "Router", detail: "Cola creciente" }, { title: "Receptor", detail: "Buffer limitado" }],
+        facts: [{ label: "Síntoma de red", value: "Cola y demora crecientes" }, { label: "Síntoma del host", value: "Receptor lento" }],
+        steps: [
+          { id: "receiver-problem", prompt: "¿Qué problema describe el riesgo de desbordar el buffer del receptor?", options: [{ id: "flow", text: "Control de flujo" }, { id: "congestion", text: "Congestión de la red" }, { id: "routing", text: "Convergencia de encaminamiento" }], correctIds: ["flow"], explanation: "El control de flujo evita que un emisor rápido sobrepase la capacidad de recepción del otro extremo." },
+          { id: "router-problem", prompt: "¿Qué fenómeno explica la cola creciente dentro del router?", options: [{ id: "congestion", text: "Congestión" }, { id: "flow", text: "Sólo control de flujo extremo a extremo" }, { id: "arp", text: "Resolución ARP incompleta" }], correctIds: ["congestion"], explanation: "La congestión aparece cuando la carga ofrecida supera temporalmente la capacidad de recursos de la red." },
+          { id: "ecn-response", prompt: "Si el router marca ECN en vez de descartar, ¿qué debe ocurrir para aliviar la congestión?", options: [{ id: "feedback", text: "El receptor informa la marca y el emisor reduce su tasa" }, { id: "router-rate", text: "El router cambia la velocidad física del enlace" }, { id: "receiver-arp", text: "El receptor envía una consulta ARP" }], correctIds: ["feedback"], explanation: "La marca debe llegar al control de congestión del emisor mediante la realimentación del receptor para que reduzca la tasa." }
+        ]
+      },
+      {
+        id: "lab-qos", number: 7, topic: "qos", difficulty: "Intermedio",
+        title: "Priorizar voz sin bloquear el resto",
+        summary: "Elegí requisitos y disciplinas de cola para tráfico con necesidades diferentes.",
+        scenario: "Un enlace transporta voz IP, navegación y copias de seguridad. La voz sufre cortes cuando comienza el respaldo nocturno.",
+        nodes: [{ title: "Voz IP", detail: "Sensible a demora" }, { title: "Router QoS", detail: "Clasifica y agenda" }, { title: "Backup", detail: "Gran volumen" }],
+        facts: [{ label: "Voz", value: "Baja demora y jitter" }, { label: "Backup", value: "Tolera espera" }],
+        steps: [
+          { id: "voice-needs", prompt: "¿Qué parámetros son especialmente importantes para la voz interactiva?", multi: true, options: [{ id: "delay", text: "Baja demora" }, { id: "jitter", text: "Bajo jitter" }, { id: "bulk", text: "Máximo volumen de almacenamiento" }, { id: "hops", text: "Mayor número de saltos" }], correctIds: ["delay", "jitter"], explanation: "La conversación en tiempo real se degrada con demora y variación de demora elevadas." },
+          { id: "queue-choice", prompt: "Se desea favorecer la voz, pero garantizar servicio a las demás clases. ¿Qué enfoque es más apropiado?", options: [{ id: "wfq", text: "Una planificación ponderada como WFQ" }, { id: "strict-only", text: "Prioridad estricta ilimitada para todo el tráfico de voz" }, { id: "fifo", text: "FIFO sin clasificación" }], correctIds: ["wfq"], explanation: "Una disciplina ponderada reparte servicio entre clases y permite favorecer la voz sin dejar indefinidamente sin atención a las demás." },
+          { id: "diffserv-edge", prompt: "En DiffServ, ¿dónde conviene clasificar y marcar el tráfico al ingresar al dominio?", options: [{ id: "edge", text: "En el borde del dominio" }, { id: "receiver", text: "Sólo en el receptor final" }, { id: "dns", text: "En el servidor DNS" }], correctIds: ["edge"], explanation: "El borde clasifica y marca; los routers interiores aplican el comportamiento por salto correspondiente." }
+        ]
+      },
+      {
+        id: "lab-vlan-mpls", number: 8, topic: "vlanMpls", difficulty: "Intermedio",
+        title: "Una VLAN que no atraviesa el enlace",
+        summary: "Localizá una falla de trunk y relacioná el transporte de cliente con el núcleo MPLS.",
+        scenario: "Host-A y Host-B pertenecen a VLAN 10 en switches distintos. El trunk entre SW1 y SW2 sólo permite VLAN 20. La red del proveedor transporta luego el tráfico mediante MPLS.",
+        nodes: [{ title: "Host-A · VLAN 10", detail: "Puerto access" }, { title: "Trunk SW1—SW2", detail: "Sólo VLAN 20" }, { title: "Host-B · VLAN 10", detail: "Puerto access" }],
+        facts: [{ label: "VLAN requerida", value: "10" }, { label: "VLAN permitida", value: "20" }],
+        steps: [
+          { id: "trunk-fault", prompt: "¿Cuál es la causa inmediata de que los hosts de VLAN 10 no se comuniquen?", options: [{ id: "missing-vlan", text: "La VLAN 10 no está permitida en el trunk" }, { id: "need-router", text: "Siempre se necesita un router entre hosts de la misma VLAN" }, { id: "mpls-label", text: "Falta una etiqueta MPLS en los puertos access" }], correctIds: ["missing-vlan"], explanation: "La misma VLAN puede extenderse entre switches, pero debe estar habilitada en los enlaces trunk que atraviesa." },
+          { id: "tagging", prompt: "¿Cómo circulan normalmente las tramas de VLAN 10 por ese trunk una vez corregido?", options: [{ id: "tagged", text: "Etiquetadas con 802.1Q" }, { id: "always-untagged", text: "Siempre sin etiqueta" }, { id: "ip-label", text: "Con la dirección IP usada como etiqueta VLAN" }], correctIds: ["tagged"], explanation: "Un trunk identifica el tráfico de las VLAN mediante etiquetado 802.1Q, salvo el tratamiento particular de una VLAN nativa." },
+          { id: "mpls-core", prompt: "Dentro del núcleo MPLS del proveedor, ¿qué información usa principalmente un router LSR para reenviar?", options: [{ id: "label", text: "La etiqueta MPLS" }, { id: "mac-host", text: "La MAC del host remoto del cliente" }, { id: "vlan-only", text: "Únicamente el identificador VLAN de acceso" }], correctIds: ["label"], explanation: "En el dominio MPLS, los LSR conmutan paquetes de acuerdo con sus etiquetas y las entradas de reenvío asociadas." }
+        ]
+      },
+      {
+        id: "lab-static-return", number: 9, topic: "routing", difficulty: "Intermedio",
+        title: "La ruta de ida existe, pero la respuesta no vuelve",
+        summary: "Revisá configuraciones estáticas de dos routers y encontrá el cambio necesario para obtener conectividad de extremo a extremo.",
+        scenario: "Host-A (192.168.10.10/24) está detrás de R1 y Host-B (192.168.20.10/24) detrás de R2. El enlace entre routers es 10.0.12.0/30: R1 usa 10.0.12.1 y R2 usa 10.0.12.2. El ping sale de Host-A, llega a Host-B, pero no recibe respuesta.",
+        nodes: [{ title: "LAN A", detail: "192.168.10.0/24" }, { title: "R1 ↔ R2", detail: "10.0.12.1 · 10.0.12.2" }, { title: "LAN B", detail: "192.168.20.0/24" }],
+        facts: [{ label: "Configurado en R1", value: "ip route 192.168.20.0 255.255.255.0 10.0.12.2" }, { label: "Configurado en R2", value: "No hay ruta estática hacia LAN A" }],
+        steps: [
+          { id: "r1-check", prompt: "¿La ruta estática configurada en R1 hacia 192.168.20.0/24 es correcta?", options: [{ id: "yes", text: "Sí; 10.0.12.2 es la dirección del siguiente salto R2" }, { id: "own-address", text: "No; debería usar 10.0.12.1, que es la propia dirección de R1" }, { id: "lan-address", text: "No; debería usar 192.168.20.10, la IP de Host-B" }], correctIds: ["yes"], explanation: "R1 debe enviar los paquetes del prefijo remoto a la interfaz de R2 conectada directamente, 10.0.12.2." },
+          { id: "missing-return", prompt: "¿Qué línea hay que agregar en R2 para que la respuesta de Host-B pueda regresar a Host-A?", options: [{ id: "return-route", text: "ip route 192.168.10.0 255.255.255.0 10.0.12.1" }, { id: "duplicate-route", text: "ip route 192.168.20.0 255.255.255.0 10.0.12.2" }, { id: "default-own", text: "ip route 0.0.0.0 0.0.0.0 10.0.12.2" }], correctIds: ["return-route"], explanation: "La comunicación requiere una ruta de retorno. En R2, el siguiente salto hacia LAN A es R1, 10.0.12.1." },
+          { id: "wrong-next-hop", prompt: "Un estudiante configuró en R2: ip route 192.168.10.0 255.255.255.0 10.0.12.2. ¿Cuál es el problema?", options: [{ id: "self", text: "Usó como siguiente salto la propia dirección de R2" }, { id: "mask", text: "La máscara debe ser /30 porque el enlace es punto a punto" }, { id: "host-route", text: "Sólo se permiten rutas estáticas hacia hosts, no hacia redes" }], correctIds: ["self"], explanation: "El siguiente salto debe ser un vecino alcanzable, no la propia interfaz del router que instala la ruta." }
+        ]
+      },
+      {
+        id: "lab-static-default", number: 10, topic: "routing", difficulty: "Intermedio",
+        title: "Una ruta por defecto que apunta al lugar equivocado",
+        summary: "Detectá por qué una sucursal no llega a redes externas y corregí la ruta de salida y el camino de regreso.",
+        scenario: "La sucursal tiene LAN 192.168.40.0/24. R1 está conectado al router de borde R0 mediante 203.0.113.0/30; R1 usa 203.0.113.2 y R0 usa 203.0.113.1. En R1 se configuró una ruta por defecto, pero ningún destino externo responde.",
+        nodes: [{ title: "LAN sucursal", detail: "192.168.40.0/24" }, { title: "R1", detail: "203.0.113.2" }, { title: "R0 / salida", detail: "203.0.113.1" }],
+        facts: [{ label: "Configuración problemática", value: "ip route 0.0.0.0 0.0.0.0 203.0.113.2" }, { label: "Objetivo", value: "Acceso a redes no conocidas" }],
+        steps: [
+          { id: "default-error", prompt: "¿Qué error tiene la ruta por defecto actual de R1?", options: [{ id: "self", text: "Usa 203.0.113.2, que pertenece a R1" }, { id: "prefix", text: "0.0.0.0 no puede usarse como prefijo" }, { id: "mask", text: "La máscara debe ser 255.255.255.0" }], correctIds: ["self"], explanation: "Una ruta por defecto debe apuntar a un siguiente salto externo o a una interfaz de salida; 203.0.113.2 es la propia dirección de R1." },
+          { id: "default-fix", prompt: "¿Cuál es la corrección adecuada en R1?", options: [{ id: "to-r0", text: "ip route 0.0.0.0 0.0.0.0 203.0.113.1" }, { id: "to-self", text: "ip route 0.0.0.0 0.0.0.0 203.0.113.2" }, { id: "to-lan", text: "ip route 192.168.40.0 255.255.255.0 203.0.113.1" }], correctIds: ["to-r0"], explanation: "R0 es el vecino que ofrece salida; por eso su dirección 203.0.113.1 debe ser el siguiente salto de la ruta por defecto." },
+          { id: "return-from-edge", prompt: "Además de la ruta por defecto en R1, ¿qué necesita R0 para enviar las respuestas hacia la sucursal si no posee una ruta más general que la cubra?", options: [{ id: "specific-return", text: "Una ruta hacia 192.168.40.0/24 con siguiente salto 203.0.113.2" }, { id: "same-default", text: "La misma ruta por defecto de R1" }, { id: "arp-static", text: "Una entrada ARP estática para cada host de la sucursal" }], correctIds: ["specific-return"], explanation: "R0 debe conocer el camino hacia la LAN privada de la sucursal; su vecino para ese prefijo es R1, 203.0.113.2." }
+        ]
+      },
+      {
+        id: "lab-floating-static", number: 11, topic: "routing", difficulty: "Avanzado",
+        title: "El respaldo estático está ganando siempre",
+        summary: "Ajustá la distancia administrativa de una ruta estática para que actúe sólo cuando falle OSPF.",
+        scenario: "R1 llega a 172.16.60.0/24 por OSPF a través de R3. También existe un camino alternativo a través de R2. Se agregó una ruta estática por R2 como respaldo, pero el tráfico dejó de usar OSPF incluso cuando OSPF está sano.",
+        nodes: [{ title: "R1", detail: "Origen" }, { title: "R3", detail: "Camino OSPF" }, { title: "R2", detail: "Camino alternativo" }],
+        facts: [{ label: "Ruta OSPF", value: "AD 110" }, { label: "Ruta configurada", value: "ip route 172.16.60.0 255.255.255.0 10.0.12.2" }],
+        steps: [
+          { id: "why-static-wins", prompt: "¿Por qué la ruta estática actual reemplaza a OSPF mientras ambos caminos existen?", options: [{ id: "ad", text: "La ruta estática usa distancia administrativa 1 por defecto, menor que 110" }, { id: "metric", text: "OSPF nunca puede competir con una ruta estática" }, { id: "prefix", text: "La red 172.16.60.0/24 no puede anunciarse por OSPF" }], correctIds: ["ad"], explanation: "Para el mismo prefijo, una ruta estática normal tiene AD 1; por eso se prefiere sobre la ruta OSPF con AD 110." },
+          { id: "floating-fix", prompt: "¿Qué configuración convierte el camino por R2 en una ruta estática flotante de respaldo?", options: [{ id: "ad200", text: "ip route 172.16.60.0 255.255.255.0 10.0.12.2 200" }, { id: "ad100", text: "ip route 172.16.60.0 255.255.255.0 10.0.12.2 100" }, { id: "no-ad", text: "ip route 172.16.60.0 255.255.255.0 10.0.12.2" }], correctIds: ["ad200"], explanation: "Una AD mayor que 110 deja a OSPF como preferida y permite que la estática se instale sólo al desaparecer la ruta OSPF." },
+          { id: "after-ospf-failure", prompt: "Si la ruta OSPF hacia 172.16.60.0/24 desaparece y la ruta estática con AD 200 sigue siendo válida, ¿qué ocurrirá?", options: [{ id: "backup-installs", text: "La ruta estática de respaldo se instalará en la tabla" }, { id: "no-route", text: "No habrá ninguna ruta porque 200 es demasiado alto" }, { id: "both", text: "Las dos rutas se mantendrán instaladas" }], correctIds: ["backup-installs"], explanation: "La distancia administrativa se compara entre rutas disponibles. Al no existir OSPF, la estática flotante pasa a ser la mejor candidata." }
+        ]
+      }
+    ];
+
     const BLOCK_SIZE = 50;
     const STORAGE_KEY = "practica_redes_v2";
     const THEME_KEY = "practica_redes_theme";
@@ -591,7 +803,7 @@
       qos: "Calidad de servicio",
       vlanMpls: "VLAN y MPLS"
     };
-    const DEFAULT_STATE = { answers: {}, favorites: [], notes: {}, topic: "all", filter: "all", shuffleQuestions: false, shuffleOptions: false, questionOrder: [], optionOrders: {} };
+    const DEFAULT_STATE = { answers: {}, favorites: [], notes: {}, labAnswers: {}, topic: "all", filter: "all", shuffleQuestions: false, shuffleOptions: false, questionOrder: [], optionOrders: {} };
     let state = loadState();
     normalizeMatrixAnswers();
     let currentView = { type: "dashboard", block: 0 };
@@ -627,6 +839,7 @@
         if (state.answers[q.id] && typeof state.answers[q.id].textValue !== "string") { delete state.answers[q.id]; changed = true; }
       });
       if (!state.notes || typeof state.notes !== "object") { state.notes = {}; changed = true; }
+      if (!state.labAnswers || typeof state.labAnswers !== "object") { state.labAnswers = {}; changed = true; }
       if (changed) saveState();
     }
     function scorableQuestions() { return QUESTIONS.filter(q => !q.observed); }
@@ -723,6 +936,8 @@
     function statusChip(filter, label) { return `<button type="button" class="chip ${state.filter === filter ? "active" : ""}" onclick="setFilter('${filter}')">${label}</button>`; }
 
     function showDashboard() { currentView = { type: "dashboard", block: 0 }; render(); }
+    function showLab() { currentView = { type: "lab", block: 0 }; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
+    function showLabCase(caseId) { currentView = { type: "lab-case", caseId }; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
     function showLearn() { currentView = { type: "learn", block: 0, topic: "all" }; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
     function setLearnBlock(value) { currentView.block = Number(value); render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
     function setLearnTopic(value) { currentView.topic = value; render(); }
@@ -748,11 +963,13 @@
       if (currentView.type === "dashboard") app.innerHTML = renderDashboard();
       else if (currentView.type === "stats") app.innerHTML = renderStats();
       else if (currentView.type === "learn") app.innerHTML = renderLearnView();
+      else if (currentView.type === "lab") app.innerHTML = renderLabDashboard();
+      else if (currentView.type === "lab-case") app.innerHTML = renderLabCase(currentView.caseId);
       else app.innerHTML = renderQuestionsView();
       app.classList.remove("view-enter"); void app.offsetWidth; app.classList.add("view-enter");
     }
     function renderDashboard() {
-      const t = totals(); const progress = pct(t.answered, t.total);
+      const t = totals(); const progress = pct(t.answered, t.total); const lab = labTotals();
       const blocks = Math.ceil(QUESTIONS.length / BLOCK_SIZE);
       let cards = "";
       if (state.topic !== "all") {
@@ -790,9 +1007,132 @@
           <div class="control-row"><div class="select-wrap"><label class="sr-only" for="topicSelect">Tema</label><select id="topicSelect" onchange="setTopic(this.value)">${topicOptions}</select></div><div class="chips">${statusChip("all","Todas")}${statusChip("unanswered","No respondidas")}${statusChip("incorrect","Incorrectas")}${statusChip("favorites","Favoritas")}</div></div>
           <div class="control-row"><label class="toggle"><input type="checkbox" ${state.shuffleQuestions ? "checked" : ""} onchange="toggleShuffle('questions',this.checked)"> Mezclar preguntas</label><label class="toggle"><input type="checkbox" ${state.shuffleOptions ? "checked" : ""} onchange="toggleShuffle('options',this.checked)"> Mezclar opciones</label><span class="spacer"></span><button class="btn primary" type="button" onclick="showLearn()">Modo Aprender</button><button class="btn" type="button" onclick="reviewErrors()">Repasar errores</button><button class="btn danger" type="button" onclick="resetFiltered()">Reiniciar selección</button></div>
         </div>
+        <div class="lab-promo">
+          <span class="lab-promo-icon" aria-hidden="true">⌁</span>
+          <div class="lab-promo-copy"><h2>Laboratorio de casos</h2><p>Aplicá los conceptos en ${LAB_CASES.length} situaciones encadenadas. Avance: ${lab.answered}/${lab.total} decisiones.</p></div>
+          <button class="btn primary" type="button" onclick="showLab()">Resolver casos</button>
+        </div>
         <div class="section-head"><h2>${state.topic === "all" ? "Bloques de práctica" : "Práctica por tema"}</h2><span class="section-meta">${QUESTIONS.filter(matchesFilters).length} preguntas coinciden con los filtros</span></div>
         <div class="block-grid">${cards}</div>
       </section>`;
+    }
+
+    function getLabAnswer(caseId, stepId) { return state.labAnswers?.[caseId]?.[stepId]; }
+    function labCaseProgress(labCase) {
+      const answers = labCase.steps.map(step => getLabAnswer(labCase.id, step.id)).filter(Boolean);
+      return { total: labCase.steps.length, answered: answers.length, correct: answers.filter(answer => answer.correct).length, complete: answers.length === labCase.steps.length };
+    }
+    function labTotals() {
+      return LAB_CASES.reduce((total, labCase) => {
+        const progress = labCaseProgress(labCase);
+        total.total += progress.total; total.answered += progress.answered; total.correct += progress.correct;
+        if (progress.complete) total.completedCases += 1;
+        return total;
+      }, { total: 0, answered: 0, correct: 0, completedCases: 0 });
+    }
+    function isLabStepLocked(labCase, stepIndex) {
+      return stepIndex > 0 && !getLabAnswer(labCase.id, labCase.steps[stepIndex - 1].id);
+    }
+    function renderLabDashboard() {
+      const total = labTotals();
+      const cards = LAB_CASES.map((labCase, index) => {
+        const progress = labCaseProgress(labCase);
+        const progressLabel = progress.complete ? "Caso completado" : progress.answered ? `En curso · ${progress.answered}/${progress.total} etapas` : `Sin iniciar · 0/${progress.total} etapas`;
+        return `<button class="lab-card ${progress.complete ? "complete" : ""}" type="button" onclick="showLabCase('${labCase.id}')" style="--delay:${Math.min(index, 7) * 35}ms">
+          <span class="lab-card-top"><span class="number">Caso ${labCase.number}</span><span class="topic-tag">${esc(TOPICS[labCase.topic])}</span><span class="lab-difficulty">${esc(labCase.difficulty)}</span>${progress.complete ? `<span class="lab-complete-badge">✓ Completado</span>` : ""}</span>
+          <span><h2>${esc(labCase.title)}</h2><p>${esc(labCase.summary)}</p></span>
+          <span class="lab-card-progress"><span>${progressLabel}</span><span class="bar" aria-label="${progress.answered} de ${progress.total} etapas"><span style="width:${pct(progress.answered, progress.total)}%"></span></span></span>
+        </button>`;
+      }).join("");
+      return `<section>
+        <div class="view-head"><button class="icon-btn" type="button" onclick="showDashboard()" aria-label="Volver al inicio">←</button><div><p class="eyebrow">Aplicación de conceptos</p><h1>Laboratorio de casos</h1></div><span class="spacer"></span>${total.answered ? `<button class="btn danger" type="button" onclick="resetAllLabs()">Reiniciar casos</button>` : ""}</div>
+        <div class="learn-intro"><span class="learn-symbol" aria-hidden="true">⌁</span><div><h2>Decisiones conectadas, no preguntas aisladas</h2><p>Analizá cada escenario y avanzá etapa por etapa. Estos casos complementarios no modifican las estadísticas del formulario original.</p></div></div>
+        <div class="metrics">${metric("Casos", LAB_CASES.length)}${metric("Completados", `${total.completedCases}/${LAB_CASES.length}`)}${metric("Decisiones", `${total.answered}/${total.total}`)}${metric("Correctas", total.correct)}</div>
+        <div class="section-head"><h2>Elegí una situación</h2><span class="section-meta">El progreso se guarda en este navegador</span></div>
+        <div class="lab-grid">${cards}</div>
+      </section>`;
+    }
+    function renderLabDiagram(labCase) {
+      const nodes = labCase.nodes.map(node => `<div class="lab-node"><strong>${esc(node.title)}</strong><small>${esc(node.detail)}</small></div>`).join("");
+      const facts = labCase.facts.map(fact => `<div class="lab-fact"><span>${esc(fact.label)}</span><strong>${esc(fact.value)}</strong></div>`).join("");
+      return `<div class="lab-diagram" style="--nodes:${labCase.nodes.length}" role="img" aria-label="Topología simplificada del caso">${nodes}</div><div class="lab-facts">${facts}</div>`;
+    }
+    function renderLabCaseProgress(labCase) {
+      const progress = labCaseProgress(labCase);
+      return `<div class="lab-progress-box" data-lab-progress><strong>${progress.answered}/${progress.total} etapas</strong><span class="section-meta">${progress.correct} correctas</span><div class="bar" aria-label="${progress.answered} de ${progress.total} etapas"><span style="width:${pct(progress.answered, progress.total)}%"></span></div></div>`;
+    }
+    function renderLabStep(labCase, step, stepIndex) {
+      const answer = getLabAnswer(labCase.id, step.id);
+      const locked = isLabStepLocked(labCase, stepIndex);
+      const multi = step.multi || step.correctIds.length > 1;
+      const options = step.options.map(option => {
+        const selected = answer?.selected?.includes(option.id);
+        const correct = step.correctIds.includes(option.id);
+        const resultClass = answer ? (correct ? " correct" : selected ? " wrong" : "") : "";
+        return `<label class="option${resultClass}${answer || locked ? " disabled" : ""}"><input type="${multi ? "checkbox" : "radio"}" name="${labCase.id}-${step.id}" value="${option.id}" ${selected ? "checked" : ""} ${answer || locked ? "disabled" : ""}><span>${esc(option.text)}</span></label>`;
+      }).join("");
+      const stateClass = answer ? (answer.correct ? " answered-correct" : " answered-wrong") : locked ? " locked" : "";
+      const status = answer ? `<span class="status ${answer.correct ? "correct" : "wrong"}">${answer.correct ? "✓ Correcta" : "× Incorrecta"}</span>` : locked ? `<span class="lab-lock">🔒 Completá la etapa anterior</span>` : `<span class="topic-tag">${multi ? "Selección múltiple" : "Una respuesta"}</span>`;
+      const feedback = answer ? `<div class="feedback"><strong>${answer.correct ? "Decisión correcta." : "Revisá el razonamiento."}</strong> ${esc(step.explanation)}</div>` : "";
+      const action = locked || answer ? "" : `<div class="question-actions"><button class="btn primary" type="button" onclick="verifyLabStep('${labCase.id}','${step.id}')">Comprobar decisión</button><span class="inline-error" aria-live="polite"></span></div>`;
+      return `<article class="lab-step${stateClass}" data-lab-step="${step.id}"><div class="lab-step-top"><span class="number">Etapa ${stepIndex + 1}</span>${status}</div><h2 class="lab-step-title">${esc(step.prompt)}</h2><fieldset><legend class="sr-only">${esc(step.prompt)}</legend><div class="options">${options}</div></fieldset>${action}${feedback}</article>`;
+    }
+    function renderLabCompletion(labCase) {
+      const progress = labCaseProgress(labCase);
+      if (!progress.complete) return "";
+      const index = LAB_CASES.findIndex(item => item.id === labCase.id);
+      const nextCase = LAB_CASES[index + 1];
+      return `<div class="block-complete"><div class="block-complete-copy"><h2>Caso completado</h2><p>Resolviste ${progress.total} decisiones y acertaste ${progress.correct}. Podés repetirlo o continuar con otra situación.</p></div><div class="lab-complete-actions">${nextCase ? `<button class="btn primary" type="button" onclick="showLabCase('${nextCase.id}')">Siguiente caso →</button>` : `<button class="btn primary" type="button" onclick="showLab()">Ver todos los casos</button>`}<button class="btn" type="button" onclick="resetLabCase('${labCase.id}')">Repetir caso</button></div></div>`;
+    }
+    function renderLabCase(caseId) {
+      const labCase = LAB_CASES.find(item => item.id === caseId) || LAB_CASES[0];
+      return `<section>
+        <div class="view-head"><button class="icon-btn" type="button" onclick="showLab()" aria-label="Volver a los casos">←</button><div><p class="eyebrow">Caso ${labCase.number} · ${esc(TOPICS[labCase.topic])}</p><h1>${esc(labCase.title)}</h1></div><span class="spacer"></span><button class="btn" type="button" onclick="resetLabCase('${labCase.id}')">Reiniciar caso</button></div>
+        <div class="lab-case-head"><div><p class="lead">${esc(labCase.summary)}</p></div>${renderLabCaseProgress(labCase)}</div>
+        <div class="lab-scenario"><h2>Situación</h2><p>${esc(labCase.scenario)}</p>${renderLabDiagram(labCase)}</div>
+        <div class="section-head"><h2>Tomá las decisiones</h2><span class="section-meta">Cada etapa desbloquea la siguiente</span></div>
+        <div class="lab-step-list">${labCase.steps.map((step, index) => renderLabStep(labCase, step, index)).join("")}</div>
+        <div class="lab-completion" data-lab-completion>${renderLabCompletion(labCase)}</div>
+      </section>`;
+    }
+    function verifyLabStep(caseId, stepId) {
+      const labCase = LAB_CASES.find(item => item.id === caseId);
+      const stepIndex = labCase?.steps.findIndex(item => item.id === stepId) ?? -1;
+      if (!labCase || stepIndex < 0 || isLabStepLocked(labCase, stepIndex) || getLabAnswer(caseId, stepId)) return;
+      const step = labCase.steps[stepIndex];
+      const card = document.querySelector(`[data-lab-step="${stepId}"]`);
+      const selected = Array.from(card?.querySelectorAll("input:checked") || []).map(input => input.value);
+      const error = card?.querySelector(".inline-error");
+      if (!selected.length) { if (error) error.textContent = "Elegí al menos una opción."; return; }
+      const expected = step.correctIds.slice().sort(); const actual = selected.slice().sort();
+      const correct = expected.length === actual.length && expected.every((id, index) => id === actual[index]);
+      if (!state.labAnswers[caseId]) state.labAnswers[caseId] = {};
+      state.labAnswers[caseId][stepId] = { selected, correct };
+      saveState();
+      card.outerHTML = renderLabStep(labCase, step, stepIndex);
+      const nextStep = labCase.steps[stepIndex + 1];
+      if (nextStep) {
+        const nextCard = document.querySelector(`[data-lab-step="${nextStep.id}"]`);
+        if (nextCard) nextCard.outerHTML = renderLabStep(labCase, nextStep, stepIndex + 1);
+      }
+      const progress = document.querySelector("[data-lab-progress]");
+      if (progress) progress.outerHTML = renderLabCaseProgress(labCase);
+      const completion = document.querySelector("[data-lab-completion]");
+      if (completion) completion.innerHTML = renderLabCompletion(labCase);
+      showToast(correct ? "Decisión correcta" : "Decisión incorrecta: revisá la explicación");
+    }
+    function resetLabCase(caseId) {
+      const labCase = LAB_CASES.find(item => item.id === caseId); if (!labCase) return;
+      const progress = labCaseProgress(labCase);
+      if (!progress.answered) return showToast("Este caso todavía no tiene respuestas.");
+      if (!confirm(`Se borrarán las ${progress.answered} decisiones guardadas de este caso. ¿Continuar?`)) return;
+      delete state.labAnswers[caseId]; saveState(); showLabCase(caseId); showToast("Caso reiniciado.");
+    }
+    function resetAllLabs() {
+      const total = labTotals();
+      if (!total.answered) return showToast("Todavía no hay casos respondidos.");
+      if (!confirm(`Se borrarán ${total.answered} decisiones de todos los casos. ¿Continuar?`)) return;
+      state.labAnswers = {}; saveState(); showLab(); showToast("Laboratorio reiniciado.");
     }
 
     function renderLearnView() {
@@ -1225,7 +1565,7 @@
       selected.forEach(q => delete state.answers[q.id]); saveState(); render(); showToast("Selección reiniciada.");
     }
     function resetAll() {
-      if (!confirm("Se borrarán respuestas, favoritas, notas y preferencias de práctica. ¿Continuar?")) return;
+      if (!confirm("Se borrarán respuestas, casos de laboratorio, favoritas, notas y preferencias de práctica. ¿Continuar?")) return;
       state = structuredClone(DEFAULT_STATE); saveState(); showDashboard(); showToast("Progreso reiniciado.");
     }
 
