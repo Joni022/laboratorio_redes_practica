@@ -236,6 +236,9 @@
     .lab-fact { padding: .65rem .75rem; border: 1px solid var(--border); border-radius: 11px; background: color-mix(in srgb, var(--surface-2) 78%, transparent); }
     .lab-fact span { display: block; color: var(--muted); font-size: .72rem; font-weight: 750; letter-spacing: .05em; text-transform: uppercase; }
     .lab-fact strong { display: block; margin-top: .12rem; font-size: .9rem; }
+    .lab-evidence { margin: .8rem 0 0; overflow: hidden; border: 1px solid var(--border); border-radius: 14px; background: #eef6ff; color: #16243a; }
+    .lab-evidence figcaption { padding: .55rem .75rem; border-bottom: 1px solid #b9cbe1; color: #314a67; background: #dce9f7; font-size: .78rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+    .lab-evidence pre { min-width: max-content; margin: 0; padding: .8rem; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .8rem; line-height: 1.55; white-space: pre; }
     .lab-step-list { display: grid; gap: 1rem; width: min(100%, 980px); margin-inline: auto; }
     .lab-step { position: relative; overflow: hidden; padding: 1.15rem; border: 1px solid var(--border); border-radius: 18px; background: var(--surface); }
     .lab-step::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, var(--cyan), var(--blue), transparent 72%); }
@@ -456,7 +459,12 @@
       .btn, .icon-btn, .chip, .block-card, .favorite, .option, .lab-card, .bar > span, .toast, .sequence-item, .sequence-slot, .text-answer input { transition-property: color, background-color, border-color, opacity; transition-duration: 120ms; }
       .btn:active, .icon-btn:active, .chip:active, .block-card:active, .favorite:active, .favorite.on { transform: none; }
     }
-  </style>
+      .lab-evidence-images { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin-top:1rem; }
+      .lab-evidence { margin:0; overflow:hidden; border:1px solid var(--line); border-radius:14px; background:#f7fbff; color:#14243d; }
+      .lab-evidence figcaption { padding:.7rem .9rem; font-size:.84rem; font-weight:800; color:#21466d; background:#eaf3ff; }
+      .lab-evidence img { display:block; width:100%; height:auto; background:white; }
+      .lab-evidence pre { margin:0; padding:1rem; overflow:auto; color:#dceeff; background:#071526; font:500 .8rem/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    </style>
 </head>
 <body>
   <header class="topbar">
@@ -646,7 +654,7 @@
     const LAB_CASES = [
       {
         id: "lab-dhcp-relay", number: 1, topic: "arpDhcp", difficulty: "Intermedio",
-        title: "Una sede nueva no obtiene dirección IP",
+        title: "Conectividad en una sede nueva",
         summary: "Seguí una negociación DHCP a través de un agente relay y determiná qué ocurre en cada etapa.",
         scenario: "Un equipo nuevo se conecta a la LAN 10.20.30.0/24. El servidor DHCP está en otra red y el router 10.20.30.1 actúa como agente relay.",
         nodes: [{ title: "Cliente nuevo", detail: "Sin dirección IP" }, { title: "DHCP Relay", detail: "10.20.30.1" }, { title: "Servidor DHCP", detail: "10.10.0.10" }],
@@ -659,7 +667,7 @@
       },
       {
         id: "lab-arp-remote", number: 2, topic: "arpDhcp", difficulty: "Inicial",
-        title: "ARP al comunicarse con otra red",
+        title: "Comunicación entre dos LAN",
         summary: "Separá las direcciones de capa 2 y capa 3 cuando el destino está fuera de la LAN.",
         scenario: "PC-A (192.168.10.20/24) debe enviar un paquete a PC-B (192.168.20.30/24). Su puerta de enlace es 192.168.10.1.",
         nodes: [{ title: "PC-A", detail: "192.168.10.20" }, { title: "Router R1", detail: "192.168.10.1" }, { title: "PC-B", detail: "192.168.20.30" }],
@@ -672,7 +680,7 @@
       },
       {
         id: "lab-ipv6-icmp", number: 3, topic: "ip", difficulty: "Intermedio",
-        title: "Diagnóstico de un salto IPv6",
+        title: "Una ruta IPv6 entre redes",
         summary: "Aplicá Neighbor Discovery, direcciones link-local e ICMPv6 en una ruta entre redes.",
         scenario: "Host-A usa 2001:db8:10::25/64 y debe llegar a 2001:db8:20::40. Su router anuncia fe80::1 como puerta de enlace.",
         nodes: [{ title: "Host-A", detail: "2001:db8:10::25" }, { title: "R1", detail: "fe80::1" }, { title: "Host-B", detail: "2001:db8:20::40" }],
@@ -685,7 +693,7 @@
       },
       {
         id: "lab-route-selection", number: 4, topic: "routing", difficulty: "Intermedio",
-        title: "Elegir la mejor ruta sin mezclar métricas",
+        title: "Varias rutas hacia el mismo prefijo",
         summary: "Decidí qué entrada instalará el router cuando aprende el mismo prefijo por fuentes distintas.",
         scenario: "R1 aprende 172.16.50.0/24 mediante una ruta estática, OSPF y RIP. Luego el administrador retira la ruta estática.",
         nodes: [{ title: "Ruta estática", detail: "AD 1" }, { title: "OSPF", detail: "AD 110 · costo 20" }, { title: "RIP", detail: "AD 120 · 2 saltos" }],
@@ -698,7 +706,7 @@
       },
       {
         id: "lab-ospf-bgp", number: 5, topic: "protocols", difficulty: "Avanzado",
-        title: "Atravesar áreas y sistemas autónomos",
+        title: "Entre áreas y sistemas autónomos",
         summary: "Identificá el papel de los routers de borde en una topología OSPF conectada por BGP.",
         scenario: "Una red del área OSPF 1 llega a otra del área 2. Ambas se conectan al backbone. El router de borde del AS 65001 intercambia rutas con el AS 65002.",
         nodes: [{ title: "Área 1", detail: "OSPF" }, { title: "Área 0", detail: "Backbone" }, { title: "AS 65001 ↔ 65002", detail: "eBGP" }],
@@ -711,7 +719,7 @@
       },
       {
         id: "lab-congestion", number: 6, topic: "congestion", difficulty: "Intermedio",
-        title: "Distinguir congestión de control de flujo",
+        title: "Un cuello de botella durante la transferencia",
         summary: "Diagnosticá dos cuellos de botella parecidos y elegí el mecanismo que actúa en cada uno.",
         scenario: "Una transferencia atraviesa un router con cola creciente. Al mismo tiempo, el receptor procesa datos más lentamente de lo que los recibe.",
         nodes: [{ title: "Emisor", detail: "Alta tasa" }, { title: "Router", detail: "Cola creciente" }, { title: "Receptor", detail: "Buffer limitado" }],
@@ -724,7 +732,7 @@
       },
       {
         id: "lab-qos", number: 7, topic: "qos", difficulty: "Intermedio",
-        title: "Priorizar voz sin bloquear el resto",
+        title: "Tráfico compartido en un enlace",
         summary: "Elegí requisitos y disciplinas de cola para tráfico con necesidades diferentes.",
         scenario: "Un enlace transporta voz IP, navegación y copias de seguridad. La voz sufre cortes cuando comienza el respaldo nocturno.",
         nodes: [{ title: "Voz IP", detail: "Sensible a demora" }, { title: "Router QoS", detail: "Clasifica y agenda" }, { title: "Backup", detail: "Gran volumen" }],
@@ -737,7 +745,7 @@
       },
       {
         id: "lab-vlan-mpls", number: 8, topic: "vlanMpls", difficulty: "Intermedio",
-        title: "Una VLAN que no atraviesa el enlace",
+        title: "Extensión de una red virtual",
         summary: "Localizá una falla de trunk y relacioná el transporte de cliente con el núcleo MPLS.",
         scenario: "Host-A y Host-B pertenecen a VLAN 10 en switches distintos. El trunk entre SW1 y SW2 sólo permite VLAN 20. La red del proveedor transporta luego el tráfico mediante MPLS.",
         nodes: [{ title: "Host-A · VLAN 10", detail: "Puerto access" }, { title: "Trunk SW1—SW2", detail: "Sólo VLAN 20" }, { title: "Host-B · VLAN 10", detail: "Puerto access" }],
@@ -750,7 +758,7 @@
       },
       {
         id: "lab-static-return", number: 9, topic: "routing", difficulty: "Intermedio",
-        title: "La ruta de ida existe, pero la respuesta no vuelve",
+        title: "Conectividad de extremo a extremo",
         summary: "Revisá configuraciones estáticas de dos routers y encontrá el cambio necesario para obtener conectividad de extremo a extremo.",
         scenario: "Host-A (192.168.10.10/24) está detrás de R1 y Host-B (192.168.20.10/24) detrás de R2. El enlace entre routers es 10.0.12.0/30: R1 usa 10.0.12.1 y R2 usa 10.0.12.2. El ping sale de Host-A, llega a Host-B, pero no recibe respuesta.",
         nodes: [{ title: "LAN A", detail: "192.168.10.0/24" }, { title: "R1 ↔ R2", detail: "10.0.12.1 · 10.0.12.2" }, { title: "LAN B", detail: "192.168.20.0/24" }],
@@ -763,7 +771,7 @@
       },
       {
         id: "lab-static-default", number: 10, topic: "routing", difficulty: "Intermedio",
-        title: "Una ruta por defecto que apunta al lugar equivocado",
+        title: "Salida de una sucursal",
         summary: "Detectá por qué una sucursal no llega a redes externas y corregí la ruta de salida y el camino de regreso.",
         scenario: "La sucursal tiene LAN 192.168.40.0/24. R1 está conectado al router de borde R0 mediante 203.0.113.0/30; R1 usa 203.0.113.2 y R0 usa 203.0.113.1. En R1 se configuró una ruta por defecto, pero ningún destino externo responde.",
         nodes: [{ title: "LAN sucursal", detail: "192.168.40.0/24" }, { title: "R1", detail: "203.0.113.2" }, { title: "R0 / salida", detail: "203.0.113.1" }],
@@ -776,7 +784,7 @@
       },
       {
         id: "lab-floating-static", number: 11, topic: "routing", difficulty: "Avanzado",
-        title: "El respaldo estático está ganando siempre",
+        title: "Dos caminos hacia una red remota",
         summary: "Ajustá la distancia administrativa de una ruta estática para que actúe sólo cuando falle OSPF.",
         scenario: "R1 llega a 172.16.60.0/24 por OSPF a través de R3. También existe un camino alternativo a través de R2. Se agregó una ruta estática por R2 como respaldo, pero el tráfico dejó de usar OSPF incluso cuando OSPF está sano.",
         nodes: [{ title: "R1", detail: "Origen" }, { title: "R3", detail: "Camino OSPF" }, { title: "R2", detail: "Camino alternativo" }],
@@ -786,8 +794,89 @@
           { id: "floating-fix", prompt: "¿Qué configuración convierte el camino por R2 en una ruta estática flotante de respaldo?", options: [{ id: "ad100", text: "ip route 172.16.60.0 255.255.255.0 10.0.12.2 100" }, { id: "ad10", text: "ip route 172.16.60.0 255.255.255.0 10.0.12.2 10" }, { id: "ad200", text: "ip route 172.16.60.0 255.255.255.0 10.0.12.2 200" }, { id: "no-ad", text: "ip route 172.16.60.0 255.255.255.0 10.0.12.2" }], correctIds: ["ad200"], explanation: "Una AD mayor que 110 deja a OSPF como preferida y permite que la estática se instale sólo al desaparecer la ruta OSPF." },
           { id: "after-ospf-failure", prompt: "Si la ruta OSPF hacia 172.16.60.0/24 desaparece y la ruta estática con AD 200 sigue siendo válida, ¿qué ocurrirá?", options: [{ id: "no-route", text: "No habrá ninguna ruta porque 200 es demasiado alto" }, { id: "both", text: "Las dos rutas se mantendrán instaladas" }, { id: "backup-installs", text: "La ruta estática de respaldo se instalará en la tabla" }, { id: "ospf-remains", text: "OSPF seguirá instalando una ruta aunque ya no tenga un camino válido" }], correctIds: ["backup-installs"], explanation: "La distancia administrativa se compara entre rutas disponibles. Al no existir OSPF, la estática flotante pasa a ser la mejor candidata." }
         ]
+      },
+      {
+        id: "lab-wireshark-ping", number: 12, topic: "icmp", difficulty: "Inicial",
+        title: "Captura ICMP: prueba de conectividad",
+        summary: "Leé una captura ICMP y deducí qué acción del usuario generó ese tráfico.",
+        scenario: "Se tomó una captura desde Host-A mientras se ejecutaba una prueba de conectividad hacia un servidor. El filtro de visualización activo es icmp.",
+        nodes: [{ title: "Host-A", detail: "192.168.1.10" }, { title: "Router", detail: "Gateway" }, { title: "Servidor", detail: "8.8.8.8" }],
+        facts: [{ label: "Filtro Wireshark", value: "icmp" }, { label: "Patrón", value: "Request / Reply" }],
+        evidence: { title: "Wireshark · filtro: icmp", content: "No.   Time      Source         Destination    Protocol  Info\n101   0.000000  192.168.1.10   8.8.8.8        ICMP      Echo (ping) request  id=0x0042  seq=1\n102   0.021840  8.8.8.8        192.168.1.10   ICMP      Echo (ping) reply    id=0x0042  seq=1\n103   1.000412  192.168.1.10   8.8.8.8        ICMP      Echo (ping) request  id=0x0042  seq=2\n104   1.022019  8.8.8.8        192.168.1.10   ICMP      Echo (ping) reply    id=0x0042  seq=2" },
+        steps: [
+          { id: "command", prompt: "¿Qué comando ejecutó con mayor probabilidad el usuario en Host-A?", options: [{ id: "tracert", text: "tracert 8.8.8.8" }, { id: "arp", text: "arp -a" }, { id: "ping", text: "ping 8.8.8.8" }, { id: "route", text: "route print" }], correctIds: ["ping"], explanation: "La sucesión de mensajes ICMP Echo Request y Echo Reply con números de secuencia es la huella típica de ping." },
+          { id: "reachability", prompt: "¿Qué línea de la captura confirma que el servidor respondió a la prueba?", options: [{ id: "request", text: "Un Echo Request enviado por Host-A" }, { id: "reply", text: "Un Echo Reply desde 8.8.8.8 hacia Host-A" }, { id: "filter", text: "Que el filtro aplicado sea icmp" }, { id: "sequence", text: "Que exista un número de secuencia" }], correctIds: ["reply"], explanation: "El Echo Reply es la respuesta del destino al Echo Request y confirma que el mensaje de prueba regresó al origen." },
+          { id: "filter-meaning", prompt: "¿Qué significa el filtro icmp que aparece en Wireshark?", options: [{ id: "command-filter", text: "Que Windows ejecutó automáticamente el comando ping" }, { id: "display", text: "Que Wireshark muestra los paquetes ICMP que coinciden con ese filtro" }, { id: "capture-only", text: "Que la placa de red sólo captura ICMP y descarta todo lo demás" }, { id: "destination", text: "Que el destino necesariamente es un router" }], correctIds: ["display"], explanation: "icmp es un filtro de visualización: limita lo que se muestra en Wireshark, pero no demuestra por sí solo qué comando se ejecutó." }
+        ]
+      },
+      {
+        id: "lab-wireshark-tracert", number: 13, topic: "icmp", difficulty: "Intermedio",
+        title: "Captura ICMP: recorrido hasta el destino",
+        summary: "Interpretá TTL/Hop Limit y mensajes Time Exceeded para distinguir tracert de un ping común.",
+        scenario: "Host-A intenta llegar a 203.0.113.50. La captura muestra mensajes ICMP provenientes de routers diferentes antes de recibir una respuesta del destino.",
+        nodes: [{ title: "Host-A", detail: "192.168.1.10" }, { title: "R1 / R2", detail: "Saltos intermedios" }, { title: "Destino", detail: "203.0.113.50" }],
+        facts: [{ label: "Rasgo clave", value: "TTL creciente" }, { label: "Mensajes", value: "Time Exceeded" }],
+        evidence: { title: "Wireshark · recorte ICMP", content: "No.   Source         Destination    Protocol  Info\n201   192.168.1.10   203.0.113.50   ICMP      Echo request, ttl=1\n202   192.168.1.1    192.168.1.10   ICMP      Time-to-live exceeded\n203   192.168.1.10   203.0.113.50   ICMP      Echo request, ttl=2\n204   10.10.0.1      192.168.1.10   ICMP      Time-to-live exceeded\n205   192.168.1.10   203.0.113.50   ICMP      Echo request, ttl=3\n206   203.0.113.50  192.168.1.10   ICMP      Echo reply" },
+        steps: [
+          { id: "command", prompt: "En Windows, ¿qué comando generó con mayor probabilidad este patrón?", options: [{ id: "ping", text: "ping 203.0.113.50" }, { id: "tracert", text: "tracert 203.0.113.50" }, { id: "ipconfig", text: "ipconfig /all" }, { id: "arp", text: "arp -d *" }], correctIds: ["tracert"], explanation: "tracert envía pruebas con TTL creciente para que cada router intermedio devuelva ICMP Time Exceeded e informe su salto." },
+          { id: "router-evidence", prompt: "¿Qué evidencia revela el segundo salto intermedio en la captura?", options: [{ id: "ttl-two", text: "El Echo Request con ttl=2" }, { id: "router-reply", text: "El Time Exceeded enviado por 10.10.0.1" }, { id: "destination-reply", text: "El Echo Reply enviado por 203.0.113.50" }, { id: "first-request", text: "El primer Echo Request con ttl=1" }], correctIds: ["router-reply"], explanation: "El router que agota el TTL responde con Time Exceeded; por eso 10.10.0.1 queda identificado como un salto del recorrido." },
+          { id: "linux-name", prompt: "¿Cómo se llama habitualmente el comando equivalente en Linux?", options: [{ id: "tracepath", text: "pingroute" }, { id: "traceroute", text: "traceroute" }, { id: "pathping", text: "ipconfig" }, { id: "netstat", text: "netstat -r" }], correctIds: ["traceroute"], explanation: "En Windows el comando es tracert; en Linux se utiliza habitualmente traceroute." }
+        ]
+      },
+      {
+        id: "lab-console-network", number: 14, topic: "arpDhcp", difficulty: "Inicial",
+        title: "Recortes del diagnóstico de un host",
+        summary: "Identificá comandos y direcciones IPv6 a partir de salidas originales de GNU/Linux de las filminas.",
+        scenario: "Un técnico guardó dos recortes de terminal de un host GNU/Linux. La línea que muestra el comando fue ocultada: identificá qué consulta corresponde a cada salida.",
+        nodes: [{ title: "Host GNU/Linux", detail: "eth0" }, { title: "Dirección global", detail: "2001:db8:200:200::/64" }, { title: "Dirección link-local", detail: "fe80::/64" }],
+        facts: [{ label: "Recorte A", value: "Configuración de una interfaz" }, { label: "Recorte B", value: "Direcciones IPv6 activas" }],
+        evidenceImages: [
+          { src: "assets/linux-ifconfig-eth0.png", alt: "Salida original de una interfaz eth0 en GNU/Linux", caption: "Recorte A · salida original de las filminas" },
+          { src: "assets/linux-ip6-addr-show.png", alt: "Salida original con direcciones IPv6 de una interfaz eth0", caption: "Recorte B · salida original de las filminas" }
+        ],
+        steps: [
+          { id: "ifconfig-command", prompt: "¿Qué comando produjo con mayor probabilidad el recorte A?", options: [{ id: "ip6", text: "ip -6 addr show" }, { id: "ifconfig", text: "ifconfig eth0" }, { id: "route", text: "ip route" }, { id: "ping", text: "ping6 -c 4" }], correctIds: ["ifconfig"], explanation: "La salida muestra datos clásicos de ifconfig para eth0: Link encap, HWaddr, inet, inet6, RX y TX." },
+          { id: "ip6-command", prompt: "¿Qué comando produjo con mayor probabilidad el recorte B?", options: [{ id: "ifconfig", text: "ifconfig eth0" }, { id: "ip6", text: "ip -6 addr show" }, { id: "neighbor", text: "ip neigh show" }, { id: "route", text: "ip -6 route" }], correctIds: ["ip6"], explanation: "La salida enumera interfaces y direcciones inet6 con sus scopes; corresponde a la consulta de direcciones IPv6 con ip -6 addr show." },
+          { id: "link-local", prompt: "En el recorte B, ¿qué dirección es link-local de la interfaz eth0?", options: [{ id: "global", text: "2001:db8:200:200:214:22ff:feaa:aa44/64" }, { id: "link", text: "fe80::214:22ff:feaa:aa44/64" }, { id: "loopback", text: "::/128" }, { id: "prefix", text: "2001:db8:200:200::/64" }], correctIds: ["link"], explanation: "La salida la etiqueta explícitamente con scope link y su prefijo fe80:: identifica una dirección IPv6 link-local." }
+        ]
+      },
+      {
+        id: "lab-running-config", number: 15, topic: "routing", difficulty: "Intermedio",
+        title: "Configuración y topología",
+        summary: "Relacioná direcciones de interfaces y rutas estáticas con una topología para identificar el equipo configurado.",
+        scenario: "La red tiene tres routers en línea. Un profesor entrega un recorte de configuración sin indicar a qué router pertenece y pide ubicarlo en la topología.",
+        nodes: [{ title: "R1", detail: "LAN A · 192.168.10.1" }, { title: "R2", detail: "10.0.12.2 · 10.0.23.2" }, { title: "R3", detail: "LAN C · 192.168.30.1" }],
+        facts: [{ label: "Enlace R1-R2", value: "10.0.12.0/30" }, { label: "Enlace R2-R3", value: "10.0.23.0/30" }],
+        evidence: { title: "Recorte de running-config", content: "interface GigabitEthernet0/0\n ip address 192.168.30.1 255.255.255.0\n no shutdown\n!\ninterface Serial0/0/0\n ip address 10.0.23.3 255.255.255.252\n no shutdown\n!\nip route 192.168.10.0 255.255.255.0 10.0.23.2" },
+        steps: [
+          { id: "identify-router", prompt: "¿Sobre qué router se configuró este fragmento?", options: [{ id: "r1", text: "R1" }, { id: "r2", text: "R2" }, { id: "r3", text: "R3" }, { id: "host", text: "Sobre un host de LAN C" }], correctIds: ["r3"], explanation: "La interfaz de LAN tiene 192.168.30.1 y el enlace serial tiene 10.0.23.3: ambas direcciones pertenecen a R3 en esta topología." },
+          { id: "identify-neighbor", prompt: "En la ruta hacia 192.168.10.0/24, ¿qué equipo representa el siguiente salto 10.0.23.2?", options: [{ id: "r1", text: "R1" }, { id: "r2", text: "R2" }, { id: "r3", text: "R3 mismo" }, { id: "lan-a", text: "El host de LAN A" }], correctIds: ["r2"], explanation: "10.0.23.2 es la interfaz de R2 en el enlace R2-R3; R3 le entrega a ese vecino los paquetes dirigidos a LAN A." },
+          { id: "complete-return", prompt: "Para que R1 llegue a LAN C mediante rutas estáticas, ¿qué ruta debe tener R1?", options: [{ id: "to-r3-direct", text: "ip route 192.168.30.0 255.255.255.0 10.0.23.3" }, { id: "to-r2", text: "ip route 192.168.30.0 255.255.255.0 10.0.12.2" }, { id: "to-self", text: "ip route 192.168.30.0 255.255.255.0 10.0.12.1" }, { id: "to-network", text: "ip route 192.168.30.0 255.255.255.0 10.0.12.0" }], correctIds: ["to-r2"], explanation: "R1 no está conectado directamente con R3. Su vecino alcanzable es R2, 10.0.12.2, que conoce el siguiente enlace hacia R3." }
+        ]
+      },
+      {
+        id: "lab-vlan-port-membership", number: 16, topic: "vlanMpls", difficulty: "Intermedio",
+        title: "Conectividad de un equipo de oficina",
+        summary: "Leé el estado de puertos y VLAN para localizar una pertenencia de acceso incompleta.",
+        scenario: "Una PC conectada al puerto eth2 debe pertenecer a la VLAN 20. Su PVID figura como 20, pero no puede comunicarse con los demás equipos de esa VLAN. El administrador entrega el estado del switch.",
+        nodes: [{ title: "PC de Juan", detail: "Conectada a eth2" }, { title: "VSwitch-PB", detail: "eth0 · eth1 · eth2" }, { title: "Uplink", detail: "Trunk por eth0" }],
+        facts: [{ label: "VLAN esperada", value: "20" }, { label: "PVID de eth2", value: "20" }, { label: "Tipo de eth0", value: "Trunk" }],
+        evidence: { title: "VSwitch-PB · estado de puertos y VLAN", content: "(VSwitch-PB) port list\nListado de puertos\nPort   PVID   Enabled\n--------------------\neth0   none   True\neth1   10     True\neth2   20     True\n\n(VSwitch-PB) vlan list\nListado de VLANs\nVLAN   Name   Untagged Ports   Tagged Ports\n------------------------------------------\n10            eth1             eth0\n20            none             eth0" },
+        steps: [
+          { id: "find-fault", prompt: "¿Qué inconsistencia explica mejor el problema de la PC conectada a eth2?", options: [{ id: "pvid", text: "El PVID de eth2 debería ser 10" }, { id: "trunk", text: "El switch no tiene ningún puerto configurado como trunk" }, { id: "membership", text: "La VLAN 20 no tiene eth2 como puerto untagged, aunque eth2 tenga PVID 20" }, { id: "disable", text: "eth0 está deshabilitado" }], correctIds: ["membership"], explanation: "El PVID clasifica las tramas sin etiqueta que ingresan por eth2, pero eth2 también debe pertenecer a la VLAN 20 como puerto untagged para que el acceso quede correctamente configurado." },
+          { id: "trunk-role", prompt: "¿Qué indica que eth0 aparezca como tagged en las VLAN 10 y 20?", options: [{ id: "access20", text: "Que eth0 es un puerto de acceso exclusivo para la VLAN 20" }, { id: "trunk", text: "Que eth0 puede transportar tramas etiquetadas de ambas VLAN como enlace trunk" }, { id: "pvid20", text: "Que el PVID de eth0 es 20" }, { id: "disabled", text: "Que eth0 sólo acepta tráfico sin etiqueta" }], correctIds: ["trunk"], explanation: "Un puerto tagged transporta varias VLAN identificadas por su etiqueta. Por eso eth0 puede ser el uplink trunk para las VLAN 10 y 20." },
+          { id: "fix", prompt: "¿Qué cambio corrige la configuración del puerto de la PC sin modificar el trunk?", options: [{ id: "add-untagged", text: "Agregar eth2 como puerto untagged de la VLAN 20 y conservar su PVID en 20" }, { id: "tag-eth2", text: "Agregar eth2 como tagged en las VLAN 10 y 20" }, { id: "move-pvid", text: "Cambiar el PVID de eth2 a none" }, { id: "remove-trunk", text: "Quitar eth0 de los puertos tagged de la VLAN 20" }], correctIds: ["add-untagged"], explanation: "La PC es un equipo de acceso: sus tramas normalmente llegan sin etiqueta. eth2 debe ser untagged en VLAN 20 y usar PVID 20 para clasificar ese ingreso." }
+        ]
       }
     ];
+
+    const correctedQuestion86 = QUESTIONS.find(question => question.id === "q-086");
+    if (correctedQuestion86) {
+      correctedQuestion86.options.find(option => option.id === "q-086-o-04").text = "Se reservan recursos extremo a extremo sobre la ruta elegida";
+      correctedQuestion86.correctIds = ["q-086-o-01", "q-086-o-04"];
+      correctedQuestion86.isMulti = true;
+      correctedQuestion86.answerVersion = 2;
+    }
 
     const BLOCK_SIZE = 50;
     const STORAGE_KEY = "practica_redes_v2";
@@ -829,6 +918,10 @@
     function isTextQuestion(q) { return Array.isArray(q.acceptedAnswers) && q.acceptedAnswers.length > 0; }
     function normalizeMatrixAnswers() {
       let changed = false;
+      QUESTIONS.filter(q => q.answerVersion && state.answers[q.id]?.revision !== q.answerVersion).forEach(q => {
+        delete state.answers[q.id];
+        changed = true;
+      });
       QUESTIONS.filter(isMatrixQuestion).forEach(q => {
         if (state.answers[q.id] && !state.answers[q.id].matrixSelections) { delete state.answers[q.id]; changed = true; }
       });
@@ -1062,6 +1155,12 @@
       const facts = labCase.facts.map(fact => `<div class="lab-fact"><span>${esc(fact.label)}</span><strong>${esc(fact.value)}</strong></div>`).join("");
       return `<div class="lab-diagram" style="--nodes:${labCase.nodes.length}" role="img" aria-label="Topología simplificada del caso">${nodes}</div><div class="lab-facts">${facts}</div>`;
     }
+    function renderLabEvidence(labCase) {
+      const images = (labCase.evidenceImages || []).map(image => `<figure class="lab-evidence"><figcaption>${esc(image.caption)}</figcaption><img src="${esc(image.src)}" alt="${esc(image.alt)}" loading="lazy"></figure>`).join("");
+      const imageMarkup = images ? `<div class="lab-evidence-images">${images}</div>` : "";
+      if (!labCase.evidence) return imageMarkup;
+      return `${imageMarkup}<figure class="lab-evidence"><figcaption>${esc(labCase.evidence.title)}</figcaption><pre>${esc(labCase.evidence.content)}</pre></figure>`;
+    }
     function renderLabCaseProgress(labCase) {
       const progress = labCaseProgress(labCase);
       return `<div class="lab-progress-box" data-lab-progress><strong>${progress.answered}/${progress.total} etapas</strong><span class="section-meta">${progress.correct} correctas</span><div class="bar" aria-label="${progress.answered} de ${progress.total} etapas"><span style="width:${pct(progress.answered, progress.total)}%"></span></div></div>`;
@@ -1094,7 +1193,7 @@
       return `<section>
         <div class="view-head"><button class="icon-btn" type="button" onclick="showLab()" aria-label="Volver a los casos">←</button><div><p class="eyebrow">Caso ${labCase.number} · ${esc(TOPICS[labCase.topic])}</p><h1>${esc(labCase.title)}</h1></div><span class="spacer"></span><button class="btn" type="button" onclick="resetLabCase('${labCase.id}')">Reiniciar caso</button></div>
         <div class="lab-case-head"><div><p class="lead">${esc(labCase.summary)}</p></div>${renderLabCaseProgress(labCase)}</div>
-        <div class="lab-scenario"><h2>Situación</h2><p>${esc(labCase.scenario)}</p>${renderLabDiagram(labCase)}</div>
+        <div class="lab-scenario"><h2>Situación</h2><p>${esc(labCase.scenario)}</p>${renderLabDiagram(labCase)}${renderLabEvidence(labCase)}</div>
         <div class="section-head"><h2>Tomá las decisiones</h2><span class="section-meta">Cada etapa desbloquea la siguiente</span></div>
         <div class="lab-step-list">${labCase.steps.map((step, index) => renderLabStep(labCase, step, index)).join("")}</div>
         <div class="lab-completion" data-lab-completion>${renderLabCompletion(labCase)}</div>
@@ -1543,7 +1642,7 @@
       const expected = q.correctIds.slice().sort(); const actual = selected.slice().sort();
       const correct = expected.length === actual.length && expected.every((id,i) => id === actual[i]);
       const previous = getAnswer(questionId);
-      state.answers[questionId] = { selected, correct, attempts: (previous?.attempts || 0) + 1, errors: correct ? 0 : (previous?.errors || 0) + 1 };
+      state.answers[questionId] = { selected, correct, attempts: (previous?.attempts || 0) + 1, errors: correct ? 0 : (previous?.errors || 0) + 1, revision: q.answerVersion };
       completeReviewRetry(questionId);
       saveState(); updateAnsweredCard(questionId); updateBlockSummary(); showToast(correct ? "Respuesta correcta" : "Respuesta incorrecta: revisá las opciones marcadas");
       updateReviewProgress();
